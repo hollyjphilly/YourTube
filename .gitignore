@@ -9,3 +9,6 @@ config/master.key
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+
+app/assets/images/
+public/assets
