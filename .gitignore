@@ -10,5 +10,6 @@ config/master.key
 !/log/.keep
 !/tmp/.keep
 
+/app/assets/javascripts/bunlde.js
 app/assets/images/
 public/assets
