@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Top from './top_component';
-import * as AJAX from './util/session_api_util';
+import configureStore from './store/store';
+import Root from './components/root';
+import {
+  login,
+  logout,
+  createAccount
+} from './actions/session_actions';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-  window.createUser = AJAX.createAccountAJAX;
-  window.deleteUser = AJAX.removeAccountAJAX;
-  window.editUser = AJAX.editAccountAJAX;
-  window.login = AJAX.loginAJAX;
-  window.logout = AJAX.logoutAJAX;
+  const store = configureStore();
 
-  ReactDOM.render(<Top />, root);
+  // TEST BEGIN
+
+  window.login = login;
+  window.logout = logout;
+  window.createAccount = createAccount;
+
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+
+  // TEST END
+
+  ReactDOM.render(<Root store={store}/>, root);
 });

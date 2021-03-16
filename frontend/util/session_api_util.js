@@ -1,4 +1,5 @@
-export const createAccountAJAX = (user) => {
+export const createAccount = (user) => {
+    
     return $.ajax({
         method: 'POST',
         url: '/api/users',
@@ -6,14 +7,14 @@ export const createAccountAJAX = (user) => {
     })
 }
 
-export const removeAccountAJAX = (userId) => {
+export const removeAccount = (userId) => {
     return $.ajax({
         method: 'DELETE',
         url: `/api/users/${userId}`,
     })
 }
 
-export const editAccountAJAX = (user) => {
+export const editAccount = (user) => {
     return $.ajax({
         method: 'PATCH',
         url: `/api/users/${user.id}`,
@@ -21,7 +22,7 @@ export const editAccountAJAX = (user) => {
     })
 }
 
-export const loginAJAX = (user) => {
+export const login = (user) => {
     return $.ajax({
         method: 'POST',
         url: '/api/session',
@@ -29,7 +30,7 @@ export const loginAJAX = (user) => {
     })
 }
 
-export const logoutAJAX = () => {
+export const logout = () => {
     return $.ajax({
         method: 'DELETE',
         url: '/api/session',
