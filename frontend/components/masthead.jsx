@@ -14,11 +14,11 @@ class Masthead extends React.Component {
     signinButton() {
         if (this.props.currentUser) {
             return <button id='temp-signout-btn' onClick={this.props.logout}>
-                <FontAwesomeIcon icon={['fa', 'user-check']} />
+                <FontAwesomeIcon className="icon user" icon={['fa', 'user-check']} />
             </button>
         } else {
             return <button id='signin-btn' onClick={()=>this.toSignin}>
-                <FontAwesomeIcon icon={['fa', 'user-circle']} />SIGN IN
+                <FontAwesomeIcon className="icon user" icon={['fa', 'user-circle']} /><p>SIGN IN</p>
             </button>
         }
     }
@@ -27,15 +27,14 @@ class Masthead extends React.Component {
         return (
             <div id="masthead">
                 <div id="left-masthead">
-                    <FontAwesomeIcon icon={['fa', 'bars']} />
-                    <FontAwesomeIcon icon={['fab', 'youtube']} />
-                    <p>YourTube</p>
+                    <FontAwesomeIcon className="icon" icon={['fa', 'bars']} />
+                    <div id="logo"><FontAwesomeIcon className="icon logo" icon={['fab', 'youtube']} />YourTube</div>
                 </div>
-                <FontAwesomeIcon icon={['fa', 'search']} />
+                <FontAwesomeIcon className="icon" icon={['fa', 'search']} />
                 <div id="right-masthead">
-                    <FontAwesomeIcon icon={['fa', 'video']} />
-                    <FontAwesomeIcon icon={['fab', 'github']} />
-                    <FontAwesomeIcon icon={['fab', 'linkedin']} />
+                    <FontAwesomeIcon className="icon" icon={['fa', 'video']} />
+                    <FontAwesomeIcon className="icon" icon={['fab', 'github']} />
+                    <FontAwesomeIcon className="icon" icon={['fab', 'linkedin']} />
                     {this.signinButton()}
                 </div>
             </div>

@@ -15,7 +15,49 @@
 }
 
 #right-masthead {
-    width: 200px;
+    width: 300px;
     display: flex;
     justify-content: space-around;
+}
+
+#logo {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: larger;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    margin-left: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    color: rgb(0, 102, 255);
+}
+
+button {
+    display: flex;
+    justify-content: space-around;
+    border-color: rgb(33, 119, 247);
+    color: white;
+}
+
+.icon {
+    margin-top: 5px;
+    font-size: larger;
+    color: rgb(87, 87, 87);
+}
+
+.logo {
+    margin-right: 4px;
+    color: red;
+}
+
+.user {
+    margin-top: 4px;
+    margin-right: 4px;
+    font-size: larger;
+    color: rgb(0, 102, 255);
 }
