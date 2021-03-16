@@ -71,9 +71,9 @@ class AccountForm extends React.Component {
                         onChange={this.update('password')}
                     />
                 </label>
-                <div>
-                    <button>{this.props.formType}</button>
+                <div className="form-btns">
                     <Route path="/signup" component={signinButton} />
+                    <button id="submit">{this.props.formType}</button>
                 </div>
             </form>
         </>
