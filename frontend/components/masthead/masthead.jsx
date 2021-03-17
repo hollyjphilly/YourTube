@@ -9,12 +9,12 @@ class Masthead extends React.Component {
 
     signinButton() {
         if (this.props.currentUser) {
-            return <button onClick={this.props.logout}>
+            return <button onClick={this.props.logout} id="signin">
                 <FontAwesomeIcon className="icon user" icon={['fa', 'user-check']} />
             </button>
         } else {
             return <NavLink to="/login" className="btn">
-                <button>
+                <button id="signin">
                     <FontAwesomeIcon className="icon user" icon={['fa', 'user-circle']} /><p>SIGN IN</p>
                 </button>
             </NavLink>
