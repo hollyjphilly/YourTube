@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import signupButton from "./signup_button";
 import { Route } from 'react-router-dom';
+import Joojle from '../joogle';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -24,27 +25,32 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        // const { currentUser } = this.props;
+        const { currentUser } = this.props;
         return <>
-            {/* {currentUser ? "" : <Redirect to='/'/>} */}
+            {currentUser ? <Redirect to='/' /> : ""}
             <form onSubmit={this.handleSubmit}>
-                <label>Username
-                    <input
-                        type="text"
-                        value={this.state.username}
-                        onChange={this.update('username')}
-                    />
-                </label>
-                <label>Password
-                    <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.update('password')}
-                    />
-                </label>
+                <h1>
+                    <span>Sign in to </span>
+                    <Joojle />
+                </h1>
+
+                <input
+                    type="text"
+                    value={this.state.username}
+                    placeholder="Username"
+                    onChange={this.update('username')}
+                />
+
+                <input
+                    type="password"
+                    value={this.state.password}
+                    placeholder="Password"
+                    onChange={this.update('password')}
+                />
+
                 <div className="form-btns">
+                    <button className="form-submit">{this.props.formType}</button>
                     <Route path="/login" component={signupButton} />
-                    <button id="submit">{this.props.formType}</button>
                 </div>
             </form>
         </>

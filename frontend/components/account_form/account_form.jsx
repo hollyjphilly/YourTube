@@ -1,6 +1,7 @@
 import React from 'react';
-import signinButton from "./signin_button";
-import { Route } from 'react-router-dom';
+import signinInsteadButton from "./signin_instead_button";
+import Joojle from '../joogle';
+import { Redirect, Route } from 'react-router-dom';
 
 class AccountForm extends React.Component {
     constructor(props) {
@@ -27,53 +28,52 @@ class AccountForm extends React.Component {
     }
 
     render() {
-        // const { currentUser } = this.props;
+        const { currentUser } = this.props;
         return <>
-            {/* {currentUser ? <Redirect to='/' /> : ""} */}
+            {currentUser ? <Redirect to='/' /> : ""}
             <form onSubmit={this.handleSubmit}>
-                <label>First name
+                <h1>Create your <Joojle /> Account</h1>
+
+                <div className="name">
                     <input
                         type="text"
                         value={this.state.first_name}
                         placeholder="First name"
                         onChange={this.update('first_name')}
                     />
-                </label>
-                <label>Last name
+
                     <input
                         type="text"
                         value={this.state.last_name}
                         placeholder="Last name"
                         onChange={this.update('last_name')}
                     />
-                </label>
-                <label>Email
-                    <input
-                        type="text"
-                        value={this.state.email}
-                        placeholder="Your email address"
-                        onChange={this.update('email')}
-                    />
-                </label>
-                <label>Username
-                    <input
-                        type="text"
-                        value={this.state.username}
-                        placeholder="Username"
-                        onChange={this.update('username')}
-                    />
-                </label>
-                <label>Password
-                    <input
-                        type="password"
-                        value={this.state.password}
-                        placeholder="Password"
-                        onChange={this.update('password')}
-                    />
-                </label>
+                </div>
+
+                <input
+                    type="text"
+                    value={this.state.email}
+                    placeholder="Your email address"
+                    onChange={this.update('email')}
+                />
+
+                <input
+                    type="text"
+                    value={this.state.username}
+                    placeholder="Username"
+                    onChange={this.update('username')}
+                />
+
+                <input
+                    type="password"
+                    value={this.state.password}
+                    placeholder="Password"
+                    onChange={this.update('password')}
+                />
+                
                 <div className="form-btns">
-                    <Route path="/signup" component={signinButton} />
-                    <button id="submit">{this.props.formType}</button>
+                    <button className="form-submit">{this.props.formType}</button>
+                    <Route path="/signup" component={signinInsteadButton} />
                 </div>
             </form>
         </>

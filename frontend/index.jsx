@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// TEST BEGIN
-	window.login = login;
-	window.logout = logout;
-	window.createAccount = createAccount;
-	window.getState = store.getState;
-	window.dispatch = store.dispatch;
+	// window.login = login;
+	// window.logout = logout;
+	// window.createAccount = createAccount;
+	// window.getState = store.getState;
+	// window.dispatch = store.dispatch;
 	// TEST END
 
 

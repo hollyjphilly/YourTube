@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Masthead from './masthead';
+import UserIconButton from './user_icon_button';
 import { logout } from '../../actions/session_actions';
 
 const mSTP = ({ entities, session }, rProps) => {
@@ -14,4 +14,4 @@ const mDTP = (dispatch) => {
     }
 }
 
-export default connect(mSTP, mDTP)(Masthead);
+export default connect(mSTP, mDTP)(UserIconButton);
