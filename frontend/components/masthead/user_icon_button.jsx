@@ -12,7 +12,6 @@ class UserIconButton extends React.Component {
     }
 
     toggle() {
-        debugger
         this.setState({
             hidden: !this.state.hidden
         })
@@ -39,7 +38,6 @@ class UserIconButton extends React.Component {
     }
 
     render() {
-        debugger
         const { logout, currentUser } = this.props;
         return <button className="user-icon-container"> 
             <div className="user-icon-dropdown" onClick={this.toggle}>

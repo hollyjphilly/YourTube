@@ -5,13 +5,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SessionFormContainer from "./session_form/session_form_container";
 import CreateAccountFormContainer from "./account_form/create_account_form_container"
 import { Route, Switch } from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
     return <div>
         <Switch>
             <AuthRoute path="/login" component={SessionFormContainer} />
             <AuthRoute path="/signup" component={CreateAccountFormContainer} />
+            <ProtectedRoute path="/feed/subscriptions" />
+            <ProtectedRoute path="/feed/likedvideos" />
             <Route path="/" component={Main} />
         </Switch>
     </div>

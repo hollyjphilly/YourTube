@@ -34,7 +34,7 @@ const Protected = ({ loggedIn, path, component: Component }) => {
                 if (loggedIn) {
                     return <Component {...props} />
                 } else {
-                    return <Redirect to="/signup" />
+                    return <Redirect to="/login" />
                 }
             }}
         />
