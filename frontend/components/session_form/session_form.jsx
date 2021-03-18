@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import signupButton from "./signup_button";
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import Joojle from '../joogle';
 
 class SessionForm extends React.Component {
@@ -13,6 +13,11 @@ class SessionForm extends React.Component {
 
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.logindemo = this.logindemo.bind(this);
+    }
+
+    logindemo() {
+        this.props.processForm({ username: "demo", password: "password", })
     }
 
     handleSubmit(e) {
@@ -48,6 +53,8 @@ class SessionForm extends React.Component {
                         placeholder="Password"
                         onChange={this.update('password')}
                     />
+
+                    <p>Or view site using a <a onClick={this.logindemo}>demo account</a></p>
 
                     <div className="form-btns">
                         <button className="form-submit">{this.props.formType}</button>

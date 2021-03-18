@@ -37,3 +37,22 @@
     bottom: 0;
     top: 0;
 }
+
+p {
+    font-family: $roboto;
+    font-size: 14px;
+    font-weight: 400;
+    color: $icon-gray;
+}
+
+a {
+    font-family: $open-sans;
+    font-size: 14px;
+    font-weight: 600;
+    color: $blue;
+    text-decoration: underline;
+}
+
+a:hover {
+    cursor: pointer;
+}

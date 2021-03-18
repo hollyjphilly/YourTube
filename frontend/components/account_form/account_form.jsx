@@ -16,6 +16,11 @@ class AccountForm extends React.Component {
         };
         this.typing = "text";
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.logindemo = this.logindemo.bind(this);
+    }
+
+    logindemo() {
+        this.props.login({ username: "demo", password: "password", })
     }
 
     handleSubmit(e) {
@@ -71,6 +76,8 @@ class AccountForm extends React.Component {
                         placeholder="Password"
                         onChange={this.update('password')}
                     />
+
+                    <p>Or view site using a <a onClick={this.logindemo}>demo account</a></p>
                     
                     <div className="form-btns">
                         <button className="form-submit">{this.props.formType}</button>

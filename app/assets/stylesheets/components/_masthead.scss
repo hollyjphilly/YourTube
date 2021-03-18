@@ -9,12 +9,20 @@ input {
 #masthead .icon {
     font-size: large;
     color: $icon-gray;
-    padding: 0 15px 0 15px; 
+    padding: 1px 15px 0 15px; 
     // top right bottom left
 }
 
-#masthead .icon:first-child {
+#masthead a {
+    cursor: pointer;
+}
+
+#masthead a:first-child {
     margin-left: 12px;
+}
+
+.logo-image:hover {
+    cursor: pointer;
 }
 
 .hamburger {
