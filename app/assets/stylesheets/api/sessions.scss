@@ -209,6 +209,11 @@ button.form-submit {
     font-family: 'Open Sans', sans-serif;
 }
 
+button:hover {
+    cursor: pointer;
+    outline: none;
+}
+
 .form-alt-submit {
     margin-top: 20px;
     margin-right: 100px;
