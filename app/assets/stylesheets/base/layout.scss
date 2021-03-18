@@ -1,0 +1,39 @@
+#masthead {
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+
+#left-masthead {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#right-masthead {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.content {
+    display:flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.background {
+    position: fixed;
+    background-color: white;
+    display: inline-block;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+}

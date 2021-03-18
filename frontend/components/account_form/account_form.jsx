@@ -29,54 +29,56 @@ class AccountForm extends React.Component {
 
     render() {
         const { currentUser } = this.props;
-        return <>
+        return <div className="background">
             {currentUser ? <Redirect to='/' /> : ""}
-            <form onSubmit={this.handleSubmit}>
-                <h1>Create your <Joojle /> Account</h1>
+            <div className="content">
+                <form onSubmit={this.handleSubmit}>
+                    <h1>Create your <Joojle /> Account</h1>
 
-                <div className="name">
+                    <div className="name">
+                        <input
+                            type="text"
+                            value={this.state.first_name}
+                            placeholder="First name"
+                            onChange={this.update('first_name')}
+                        />
+
+                        <input
+                            type="text"
+                            value={this.state.last_name}
+                            placeholder="Last name"
+                            onChange={this.update('last_name')}
+                        />
+                    </div>
+
                     <input
                         type="text"
-                        value={this.state.first_name}
-                        placeholder="First name"
-                        onChange={this.update('first_name')}
+                        value={this.state.email}
+                        placeholder="Your email address"
+                        onChange={this.update('email')}
                     />
 
                     <input
                         type="text"
-                        value={this.state.last_name}
-                        placeholder="Last name"
-                        onChange={this.update('last_name')}
+                        value={this.state.username}
+                        placeholder="Username"
+                        onChange={this.update('username')}
                     />
-                </div>
 
-                <input
-                    type="text"
-                    value={this.state.email}
-                    placeholder="Your email address"
-                    onChange={this.update('email')}
-                />
-
-                <input
-                    type="text"
-                    value={this.state.username}
-                    placeholder="Username"
-                    onChange={this.update('username')}
-                />
-
-                <input
-                    type="password"
-                    value={this.state.password}
-                    placeholder="Password"
-                    onChange={this.update('password')}
-                />
-                
-                <div className="form-btns">
-                    <button className="form-submit">{this.props.formType}</button>
-                    <Route path="/signup" component={signinInsteadButton} />
-                </div>
-            </form>
-        </>
+                    <input
+                        type="password"
+                        value={this.state.password}
+                        placeholder="Password"
+                        onChange={this.update('password')}
+                    />
+                    
+                    <div className="form-btns">
+                        <button className="form-submit">{this.props.formType}</button>
+                        <Route path="/signup" component={signinInsteadButton} />
+                    </div>
+                </form>
+            </div>
+        </div>
     }
 }
 

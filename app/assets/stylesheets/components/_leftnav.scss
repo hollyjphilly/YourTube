@@ -1,0 +1,45 @@
+.leftnav {
+    position: fixed;
+    display: inline-block;
+    width: 72px;
+    top: 56px;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+}
+
+.leftnav-btn {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 17px 14px;
+}
+
+.leftnav-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.leftnav-btn:first-child {
+    padding: 22px 14px;
+}
+
+.leftnav-btn .icon {
+    font-size: large;
+    color: $icon-gray;
+    margin-bottom: 10px;
+}
+
+.leftnav-btn.active .icon {
+    color: red;
+}
+
+.leftnav-btn.active span {
+    color: red;
+}
+
+.leftnav span {
+    font-size: 10px;
+    color: $icon-gray;
+    font-family: $roboto;
+}

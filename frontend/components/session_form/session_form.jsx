@@ -26,34 +26,36 @@ class SessionForm extends React.Component {
 
     render() {
         const { currentUser } = this.props;
-        return <>
+        return <div className="background">
             {currentUser ? <Redirect to='/' /> : ""}
-            <form onSubmit={this.handleSubmit}>
-                <h1>
-                    <span>Sign in to </span>
-                    <Joojle />
-                </h1>
+            <div className="content">
+                <form onSubmit={this.handleSubmit}>
+                    <h1>
+                        <span>Sign in to </span>
+                        <Joojle />
+                    </h1>
 
-                <input
-                    type="text"
-                    value={this.state.username}
-                    placeholder="Username"
-                    onChange={this.update('username')}
-                />
+                    <input
+                        type="text"
+                        value={this.state.username}
+                        placeholder="Username"
+                        onChange={this.update('username')}
+                    />
 
-                <input
-                    type="password"
-                    value={this.state.password}
-                    placeholder="Password"
-                    onChange={this.update('password')}
-                />
+                    <input
+                        type="password"
+                        value={this.state.password}
+                        placeholder="Password"
+                        onChange={this.update('password')}
+                    />
 
-                <div className="form-btns">
-                    <button className="form-submit">{this.props.formType}</button>
-                    <Route path="/login" component={signupButton} />
-                </div>
-            </form>
-        </>
+                    <div className="form-btns">
+                        <button className="form-submit">{this.props.formType}</button>
+                        <Route path="/login" component={signupButton} />
+                    </div>
+                </form>
+            </div>
+        </div>
     }
 }
 
