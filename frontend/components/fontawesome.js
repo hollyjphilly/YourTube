@@ -15,7 +15,8 @@ import {
     faUserCircle,
     faHome,
     faFire,
-    faPhotoVideo, 
+    faPhotoVideo,
+    faExternalLinkAlt, 
 } from "@fortawesome/free-solid-svg-icons";
 
 // add to library
@@ -31,4 +32,5 @@ library.add(
     faHome,
     faFire,
     faPhotoVideo,
+    faExternalLinkAlt,
 );

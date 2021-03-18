@@ -78,10 +78,16 @@ button.user-icon-container {
     background-color: transparent
 }
 
+button.user-icon-container:focus {
+    cursor: pointer;
+    outline: none;
+}
+
 button.user-icon-container:hover {
     cursor: pointer;
     border: none;
 }
+
 
 img.user-icon {
     height: 32px;

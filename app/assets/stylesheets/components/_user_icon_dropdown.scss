@@ -1,0 +1,89 @@
+.user-icon-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon-dropdown-content {
+  right: 0;
+  display: block;
+  position: absolute;
+  background-color: white;
+  min-width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+  z-index: 1;
+  margin-top: 10px;
+}
+
+img.user-icon-bigger {
+    height: 40px;
+    aspect-ratio: auto 40 / 40;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.user-display {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 0 0 20px;
+    text-align: left;
+
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: black;
+        font-family: $roboto;
+        margin: 0 0 3px;
+        
+    }
+
+    p {
+        margin: 0;
+        color: black;
+    }
+
+    a {
+        font-size: 14px;
+        font-weight: 350;
+        text-decoration: none;
+        margin-top: 8px;
+    }
+
+    a p {
+        color: $blue;
+    }
+
+}
+
+.user-icon-dropdown-content-links {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-icon-dropdown-content-links {
+
+    a, p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .link-icon {
+        margin: 0 5px 0 0;
+        padding: 0;
+    }
+
+}
+
+.user-icon-dropdown-content-links:hover {
+    background-color: #ebeced
+}
