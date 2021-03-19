@@ -23,7 +23,10 @@ class UserIconButton extends React.Component {
                     {currentUser.profile_image_url ? <img
                         className="user-icon-bigger"
                         src={currentUser.profile_image_url}>
-                </img> : <FontAwesomeIcon className="dropdown-no-user-icon" icon={['fa', 'user-circle']} />}
+                    </img> : <FontAwesomeIcon
+                            className="dropdown-no-user-icon"
+                            icon={['fa', 'user-circle']}
+                    />}
                     <div className="user-info">
                         <h3>{currentUser.first_name + " " + currentUser.last_name}</h3>
                         <p>{currentUser.email}</p>
@@ -31,7 +34,9 @@ class UserIconButton extends React.Component {
                     </div>
                 </div>
                 <div className="user-icon-dropdown-content-links" onClick={logout}>
-                    <FontAwesomeIcon className="hamburger link-icon" icon={['fa', 'external-link-alt']} />
+                    <FontAwesomeIcon
+                        className="hamburger link-icon"
+                        icon={['fa', 'external-link-alt']} />
                     <p>Sign out</p>
                 </div>
             </div>

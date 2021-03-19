@@ -3,6 +3,7 @@ import SearchBarContainer from "./search_bar_container";
 import SigninButton from "./signin_button";
 import UserIconButtonContainer from "./user_icon_button_container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ModalContainer from "../upload_modal/modal_container";
 
 class Masthead extends React.Component {
     constructor(props) {
@@ -27,11 +28,7 @@ class Masthead extends React.Component {
                 </div>
                 <SearchBarContainer />
                 <div id="right-masthead">
-                    <a href="#" >
-                        <FontAwesomeIcon
-                            className="icon"
-                            icon={['fa', 'video']}/>
-                    </a>
+                    <ModalContainer />
                     <a href="https://github.com/hollyjphilly">
                         <FontAwesomeIcon
                             className="icon"
