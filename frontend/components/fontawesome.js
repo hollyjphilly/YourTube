@@ -7,17 +7,26 @@ import {
     faLinkedin,
     faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+
 import { 
     faBars,
     faSearch,
     faVideo,
-    faUserCheck,
     faUserCircle,
     faHome,
     faFire,
     faPhotoVideo,
-    faExternalLinkAlt, 
+    faExternalLinkAlt,
+    faPlay,
+    faPause,
+    faVolumeMute,
+    faVolumeDown,
+    faExpand,
+    faStepForward,
+    faCog,
 } from "@fortawesome/free-solid-svg-icons";
+
+
 
 // add to library
 library.add(
@@ -27,10 +36,16 @@ library.add(
     faGithub,
     faLinkedin,
     faYoutube,
-    faUserCheck,
     faUserCircle,
     faHome,
     faFire,
     faPhotoVideo,
     faExternalLinkAlt,
+    faPlay,
+    faPause,
+    faVolumeMute,
+    faVolumeDown,
+    faExpand,
+    faStepForward,
+    faCog,
 );

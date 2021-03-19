@@ -6,6 +6,10 @@
 #                  api_user PATCH  /api/users/:id(.:format)                                                                 api/users#update {:format=>:json}
 #                           PUT    /api/users/:id(.:format)                                                                 api/users#update {:format=>:json}
 #                           DELETE /api/users/:id(.:format)                                                                 api/users#destroy {:format=>:json}
+#                api_videos POST   /api/videos(.:format)                                                                    api/videos#create {:format=>:json}
+#                 api_video PATCH  /api/videos/:id(.:format)                                                                api/videos#update {:format=>:json}
+#                           PUT    /api/videos/:id(.:format)                                                                api/videos#update {:format=>:json}
+#                           DELETE /api/videos/:id(.:format)                                                                api/videos#destroy {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
@@ -20,6 +24,7 @@ Rails.application.routes.draw do
 
 		namespace :api, defaults: {format: :json} do
 			resources :users, only: [:create, :destroy, :update]
+			resources :videos, only: [:show, :create, :destroy, :update]
 			resource :session, only: [:create, :destroy]
 		end
 
