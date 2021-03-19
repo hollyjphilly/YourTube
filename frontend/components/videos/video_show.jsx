@@ -3,7 +3,6 @@ import VideoPlayer from './video_player'
 
 class VideoShow extends React.Component {
     componentDidMount() {
-        debugger
         this.props.fetchVideo(this.props.match.params.videoId);
     }
 
