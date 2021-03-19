@@ -20,10 +20,10 @@ class UserIconButton extends React.Component {
     display(logout, currentUser) {
         return <div className="user-icon-dropdown-content">
                 <div className="user-display">
-                    <img
+                    {currentUser.profile_image_url ? <img
                         className="user-icon-bigger"
                         src={currentUser.profile_image_url}>
-                    </img>
+                </img> : <FontAwesomeIcon className="dropdown-no-user-icon" icon={['fa', 'user-circle']} />}
                     <div className="user-info">
                         <h3>{currentUser.first_name + " " + currentUser.last_name}</h3>
                         <p>{currentUser.email}</p>
@@ -41,10 +41,10 @@ class UserIconButton extends React.Component {
         const { logout, currentUser } = this.props;
         return <button className="user-icon-container"> 
             <div className="user-icon-dropdown" onClick={this.toggle}>
-                <img
+                {currentUser.profile_image_url ? <img
                     className="user-icon"
                     src={currentUser.profile_image_url}>
-                </img>
+                </img> : <FontAwesomeIcon className="dropdown-no-user-icon" icon={['fa', 'user-circle']} />}
                 {!this.state.hidden ? this.display(logout, currentUser) : ""}
             </div>
         </button>
