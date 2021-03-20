@@ -1,12 +1,14 @@
 .controls {
-    visibility: visible;
-    width: 400px;
-    border-radius: 10px;
-    position: absolute;
-    transition: 1s all;
+    position: relative;
     display: flex;
     z-index: 23453;
     margin-top: -28px;
+    width: 100%;
+}
+
+video {
+  width: 100%;
+  height: auto;
 }
 
 .player:hover .controls, player:focus .controls {
@@ -46,3 +48,4 @@ button:before {
   z-index: 3;
   left: 19px;
 }
+

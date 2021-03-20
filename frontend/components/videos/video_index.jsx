@@ -1,11 +1,26 @@
 import React from 'react';
-import LeftNav from "../leftnav";
+import VideoIndexItem from './video_index_item'
 
-export default () => {
-    return <>
-        <LeftNav />
-        <div className="splash-banner"></div>
-        <div className="splash-gradient"></div>
-        <div className="banner"><span>Discover your content</span></div>
-    </>
+class VideoIndex extends React.Component {
+    componentDidMount() {
+        this.props.fetchVideos();
+    }
+
+    render() {
+        const { videos } = this.props;
+        if (videos) {
+            return (
+                <div className="video-index">
+                    {videos.map(video => (
+                        <VideoIndexItem
+                        key={video.id}
+                        video={video}/>
+                    ))}
+                </div>
+            );  
+        }
+        
+    }
 }
+
+export default VideoIndex;

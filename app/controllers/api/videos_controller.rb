@@ -3,6 +3,10 @@ class Api::VideosController < ApplicationController
     def show
         @video = Video.find(params[:id])
     end
+
+    def index
+        @videos = Video.all.includes(:user)
+    end
     
     def create
         @video = Video.new(video_params)

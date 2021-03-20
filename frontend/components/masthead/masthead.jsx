@@ -8,11 +8,6 @@ import ModalContainer from "../upload_modal/modal_container";
 class Masthead extends React.Component {
     constructor(props) {
         super(props);
-        this.home = this.home.bind(this);
-    }
-
-    home () {
-        this.props.history.push("/")
     }
 
     render() {
@@ -21,10 +16,9 @@ class Masthead extends React.Component {
             <div id="masthead">
                 <div id="left-masthead">
                     <FontAwesomeIcon className="hamburger" icon={['fa', 'bars']} />
-                    <img
+                    <a href="/"><img
                         className="logo-image"
-                        src={window.logoURL} 
-                        onClick={this.home}/>
+                        src={window.logoURL} /></a>
                 </div>
                 <SearchBarContainer />
                 <div id="right-masthead">

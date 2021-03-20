@@ -11,14 +11,17 @@
     flex-direction: column;
     justify-content: flex-end;
 
-    h1 {
-        margin-bottom: 0;
-    }
-
 }
 
 .player {
-    max-width: 1000px;
+    display: block;
     padding: 24px 24px 0px 0px;
     margin: 0px 0px 0px 24px;
+    left: 0;
+    top: 0;
+}
+
+.video-info {
+    margin-bottom: 0;
+    margin-left: 24px;
 }

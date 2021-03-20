@@ -18,20 +18,21 @@ const receiveAllVideos = (videos) => {
     }
 }
 
-const receiveErrors = (errors) => {
-    return {
-        type: RECEIVE_VIDEO_ERRORS,
-        errors
-    }
-}
-
 export const fetchVideo = (videoId) => (dispatch) => {
     return (
         VideoAPIUtil.fetchVideo(videoId)
             .then(
-                (video) => dispatch(receiveVideo(video)),
-                (errors) => {
-                    dispatch(receiveErrors(errors.responseJSON))}
+                (video) => dispatch(receiveVideo(video))
+            )
+    )
+}
+
+export const fetchVideos = () => (dispatch) => {
+    return (
+        VideoAPIUtil.fetchVideos()
+            .then(
+                (videos) => dispatch(receiveAllVideos(videos)),
+                // response => {debugger}
             )
     )
 }

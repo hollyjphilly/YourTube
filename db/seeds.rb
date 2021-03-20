@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('users')
 Video.destroy_all
@@ -14,8 +16,12 @@ User.create(username: 'demo', password: 'password', email:'jane@demoemail.com', 
 User.create(username: 'banana', password: 'password', email:'banana@peel.com', first_name: 'bana', last_name: 'na', profile_image_url: 'https://i.ibb.co/XDTygG1/image.png')
 User.create(username: 'dinosaur', password: 'asteroid', email:'tee@rex.com', first_name: 'dino', last_name: 'saurus')
 vid1 = Video.create!(title: "Party Time", description: "This is what it feels like when you pass all aA assessments", uploader_id: 1)
-vid1.moviefile.attach(io: File.open("/Users/hollyphillips/Desktop/zoom/partytime2.mov"), filename: "partytime.mov")
+vid1.moviefile.attach(io: "https://yourtube-seeds.s3.amazonaws.com/partytime.mov"), filename: "partytime.mov")
+vid1.thumbnail.attach(io: "https://yourtube-seeds.s3.amazonaws.com/partythumb.png"), filename: "partythumb.png")
 vid2 = Video.create!(title: "Let's Test Video", description: "Follow me on @bughunter on instagram", uploader_id: 2)
-vid2.moviefile.attach(io: File.open("/Users/hollyphillips/Desktop/zoom/testing.mov"), filename: "testing.mov")
+vid2.moviefile.attach(io: open("https://yourtube-seeds.s3.amazonaws.com/csslife.mov"), filename: "csslife.mov")
+vid2.thumbnail.attach(io: open("https://yourtube-seeds.s3.amazonaws.com/cssthumb.png"), filename: "cssthumb.png")
 vid3 = Video.create!(title: "Cans in a Bag", description: "Getcha head in the game, or get a can in a bag", uploader_id: 3)
-vid3.moviefile.attach(io: File.open("/Users/hollyphillips/Desktop/zoom/cansinbag.mp4"), filename: "cansinbag.mp4")
+vid3.moviefile.attach(io: open("https://yourtube-seeds.s3.amazonaws.com/cansinbag.mp4"), filename: "cansinbag.mp4")
+vid3.thumbnail.attach(io: open("https://yourtube-seeds.s3.amazonaws.com/cssthumb.png"), filename: "cssthumb.png")
+

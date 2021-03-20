@@ -10,7 +10,6 @@ class VideoPlayer extends React.Component {
             settings: false,
             fullscreen: false,
         }
-        this.paused = true;
         this.video = React.createRef();
         this.togglePlay = this.togglePlay.bind(this);
         this.toggleMuted = this.toggleMuted.bind(this);
