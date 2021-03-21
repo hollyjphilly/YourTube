@@ -18,19 +18,19 @@ User.create(username: 'dinosaur', password: 'asteroid', email:'tee@rex.com', fir
 
 vid1 = Video.create!(title: "Party Time", description: "This is what it feels like when you pass all aA assessments", uploader_id: 1)
 file = open("https://yourtube-seeds.s3.amazonaws.com/partytime.mov")
-vid1.moviefile.attach(io: file)
+vid1.moviefile.attach(io: file, filename: "partytime.mov")
 file = open("https://yourtube-seeds.s3.amazonaws.com/partythumb.png")
-vid1.thumbnail.attach(io: file)
+vid1.thumbnail.attach(io: file, filename: "partythumb.png")
 
 vid2 = Video.create!(title: "Let's Test Video", description: "Follow me on @bughunter on instagram", uploader_id: 2)
 file = open("https://yourtube-seeds.s3.amazonaws.com/csslife.mov")
-vid2.moviefile.attach(io: file)
+vid2.moviefile.attach(io: file, filename: "csslife.mov")
 file = open("https://yourtube-seeds.s3.amazonaws.com/cssthumb.png")
-vid2.thumbnail.attach(io: file)
+vid2.thumbnail.attach(io: file, filename: "cssthumb.png")
 
 vid3 = Video.create!(title: "Cans in a Bag", description: "Getcha head in the game, or get a can in a bag", uploader_id: 3)
 file = open("https://yourtube-seeds.s3.amazonaws.com/cansinbag.mp4")
-vid3.moviefile.attach(io: file)
+vid3.moviefile.attach(io: file, filename: "cansinbag.mp4")
 file = open("https://yourtube-seeds.s3.amazonaws.com/cssthumb.png")
-vid3.thumbnail.attach(io: file)
+vid3.thumbnail.attach(io: file, filename: "cssthumb.png")
 
