@@ -1,9 +1,87 @@
 .controls {
     position: relative;
+    opacity: 1;
     display: flex;
-    z-index: 23453;
-    margin-top: -28px;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+    margin-top: -49px;
     width: 100%;
+    font-size: 20px;
+    // height: 100%;
+    // overflow: hidden;
+    // word-wrap: normal;
+    // -moz-transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+    // -webkit-transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+    // transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+
+  button, a {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    opacity: 0.9;
+    transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+  }
+
+  button:hover, a:hover {
+    opacity: 1;
+  }
+
+  .time-display {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
+    white-space: nowrap;
+    line-height: 39px;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #ddd;
+    flex: 6;
+  }
+
+  .svg-fill {
+    fill: white;
+    display: flex;
+  }
+
+  .player-btn {
+    width: 40px;
+    height: 100%;
+  }
+
+  svg {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .play {
+    margin-left: 10px;
+  }
+
+  .fscn {
+    margin-right: 10px;
+  }
+
+  .control-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: -50px;
+  left: 0;
+  color: rgb(235, 235, 235);
+  background-color: rgb(30,28,20);
+  padding: 5px 8px;
+  width: fit-content;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-shadow: none;
+  font-weight: 100;
+  border-radius: 2px;
+}
 }
 
 video {
@@ -11,41 +89,17 @@ video {
   height: auto;
 }
 
-.player:hover .controls, player:focus .controls {
+.controls:hover {
   opacity: 1;
 }
 
-button:before {
-  font-size: 20px;
-  position: relative;
-  color: rgb(255, 255, 255);
-
-  text-shadow: 1px 1px 0px black;
+.controls:active {
+  opacity: 1;
 }
 
-.timer {
-  line-height: 38px;
-  font-size: 10px;
-  font-family: monospace;
-  text-shadow: 1px 1px 0px black;
-  color: white;
-  flex: 5;
-  position: relative;
-}
-
-.timer div {
-  position: absolute;
-  background-color: rgba(255,255,255,0.2);
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 38px;
+.time-display-bar {
+  background-color: rgb(255, 0, 22);
+  height: 3px;
   z-index: 2;
+  
 }
-
-.timer span {
-  position: absolute;
-  z-index: 3;
-  left: 19px;
-}
-

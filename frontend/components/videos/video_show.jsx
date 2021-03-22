@@ -11,7 +11,7 @@ class VideoShow extends React.Component {
         if (!video) return <div></div>;
         return (
             <div className="video-show">
-                <VideoPlayer URL={video.movieURL}/>
+                <VideoPlayer URL={video.movieURL} id={video.id}/>
                 <div className="video-info">
                     <h1>{video.title}</h1>
                     <p>{video.description}</p>
