@@ -23,6 +23,10 @@ class VideoPlayer extends React.Component {
         this.reset = this.reset.bind(this);
     }
 
+    componentDidMount () {
+        this.setTime();
+    }
+
     setTime() {
         const vid = this.video.current;
         let minuteValue = Math.floor(vid.currentTime / 60);
@@ -47,9 +51,7 @@ class VideoPlayer extends React.Component {
 
         let mediaTime = minuteValue + ':' + secondValue;
         let durationTime = dminuteValue + ':' + dsecondValue;
-        debugger
         let barLength = Math.floor((vid.currentTime / vid.duration) * 100) + "%";
-        debugger
         this.setState({ "mediaTime": mediaTime })
         this.setState({ "timeWidth": barLength })
         if (!this.state.duration) this.setState({ "duration": durationTime })

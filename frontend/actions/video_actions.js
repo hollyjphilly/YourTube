@@ -32,7 +32,6 @@ export const fetchVideos = () => (dispatch) => {
         VideoAPIUtil.fetchVideos()
             .then(
                 (videos) => dispatch(receiveAllVideos(videos)),
-                // response => {debugger}
             )
     )
 }
