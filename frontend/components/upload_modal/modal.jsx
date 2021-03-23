@@ -7,6 +7,7 @@ class Modal extends React.Component {
         super(props)
         this.state = {
             hidden: true,
+            file: null,
         };
         this.toggle = this.toggle.bind(this);
         this.display = this.display.bind(this);
@@ -20,8 +21,33 @@ class Modal extends React.Component {
         }) }
     }
 
+    handleFile(e) {
+        this.setState({file: e.currentTarget.files[0]})
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append(video[file], this.state.file)
+    }
+
+    allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+
     display() {
         return <>
+            <form>
             <div className="modal">
                 <div className="modal-content">
                     <div className="title-row">
@@ -29,11 +55,15 @@ class Modal extends React.Component {
                         <h3>Upload videos</h3>
                     </div>
                     <div className="uploads-filepicker">
-                        <img src={uploadURL} alt="upload" />
+                        <input type="file" name="file" id="file" className="inputfile" />
+                        <label for="file"><img src={uploadURL} alt="upload" /></label>
                         <div className="uploads-dialog">
                             <h4>Drag and drop video files to upload</h4>
                             <p>Your videos will be private until you publish them.</p>
-                            <button className="select-files"> SELECT FILES</button>
+                        <input type="file" name="file"
+                                id="file" className="inputfile"
+                                onChange={this.handleFile.bind(this)}/>
+                        <label for="file"><div className="select-files"> SELECT FILES</div></label>
                         </div>
                     </div>
                     <div className="uploads-details">
@@ -42,6 +72,7 @@ class Modal extends React.Component {
                     </div>
                 </div>
             </div>
+            </form>
         </>
     }
 
@@ -52,6 +83,7 @@ class Modal extends React.Component {
                     className="icon"
                     icon={['fa', 'video']} />
             </a>
+            {/* {this.display()} */}
             {this.state.hidden ? "" : this.display()}
         </>
     }

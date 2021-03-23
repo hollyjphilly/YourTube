@@ -21,6 +21,14 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6, allow_nil: true }
     validates :password_digest, presence: true
 
+    has_many :comments,
+        foreign_key: :commenter_id,
+        class_name: :Comment
+
+    has_many :comment_replies,
+        foreign_key: :commenter_id,
+        class_name: :Comment
+
     before_validation :ensure_session_token
 
     attr_reader :password

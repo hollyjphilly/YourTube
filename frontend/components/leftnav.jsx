@@ -7,7 +7,7 @@ export default function LeftNav() {
         <>
             <div className="leftnav">
                 <NavLink className="leftnav-btn" to="/">
-                    <FontAwesomeIcon className="icon" icon={['fa', 'home']} />
+                    
                     <span>Home</span>
                 </NavLink>
                 

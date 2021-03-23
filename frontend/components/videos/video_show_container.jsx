@@ -4,6 +4,7 @@ import { fetchVideo } from '../../actions/video_actions';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = ({ entities }, rProps) => {
+    debugger
     return {
         video: entities.videos[rProps.match.params.videoId]
     }

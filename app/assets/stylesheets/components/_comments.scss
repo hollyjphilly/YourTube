@@ -1,0 +1,49 @@
+.comment-display {
+    display: flex;
+    margin: 24px 24px;
+}
+
+.comment-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 17px;
+    justify-content: space-around;
+
+    .comment-user-date {
+        display: flex;
+        flex-direction: row;
+
+        p {
+            margin-left: 5px;
+            color: #606060; 
+        }
+    }
+
+    h3 {
+        font-weight: bold;
+        color: black;
+        font-family: $roboto;
+        margin: 0 0 3px;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+
+    p {
+        margin: 0;
+        color: #030303;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.comment-user-icon {
+    height: 40px;
+    aspect-ratio: auto 40 / 40;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 40px;
+}
+

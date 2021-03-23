@@ -112,3 +112,16 @@
     font-size: 14px;
     font-family: $open-sans;
 }
+
+.select-files:hover {
+    cursor: pointer;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}

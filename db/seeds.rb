@@ -12,10 +12,16 @@ User.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('users')
 Video.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('videos')
+Comment.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('comments')
+
+# Users
 User.create(username: 'demo', password: 'password', email:'jane@demoemail.com', first_name: 'Jane', last_name: 'McDemo', profile_image_url: 'https://i.ibb.co/x8170Cw/1516927665677-e-2159024400-v-beta-t-Rx-N5n-z8rd8da6-Wvi-LYt-F5-Ke-Tvv-Jib-FL1sw-NI45-QTo-U.jpg')
 User.create(username: 'banana', password: 'password', email:'banana@peel.com', first_name: 'bana', last_name: 'na', profile_image_url: 'https://i.ibb.co/XDTygG1/image.png')
 User.create(username: 'dinosaur', password: 'asteroid', email:'tee@rex.com', first_name: 'dino', last_name: 'saurus')
 
+
+# Videos
 vid1 = Video.create!(title: "Party Time", description: "This is what it feels like when you pass all aA assessments", uploader_id: 1)
 file = open("https://yourtube-seeds.s3.amazonaws.com/partytime.mov")
 vid1.moviefile.attach(io: file, filename: "partytime.mov")
@@ -33,4 +39,18 @@ file = open("https://yourtube-seeds.s3.amazonaws.com/cansinbag.mp4")
 vid3.moviefile.attach(io: file, filename: "cansinbag.mp4")
 file = open("https://yourtube-seeds.s3.amazonaws.com/cssthumb.png")
 vid3.thumbnail.attach(io: file, filename: "cssthumb.png")
+
+
+# Comments
+Comment.create!(body: "what a ride", commenter_id: 2, video_id: 1)
+Comment.create!(body: "amazing stuff", commenter_id: 2, video_id: 1)
+Comment.create!(body: "wowza, oh my", commenter_id: 3, video_id: 1)
+Comment.create!(body: "I know right!", commenter_id: 1, video_id: 1, parent_comment_id: 1)
+Comment.create!(body: "a sweet ride :)", commenter_id: 2, video_id: 1, parent_comment_id: 1)
+Comment.create!(body: "hope you like it", commenter_id: 2, video_id: 2)
+Comment.create!(body: "this looks great!", commenter_id: 3, video_id: 2)
+Comment.create!(body: "I thoroughly", commenter_id: 3, video_id: 3)
+Comment.create!(body: "enjoy commenting", commenter_id: 3, video_id: 3)
+Comment.create!(body: "on my own videos", commenter_id: 3, video_id: 3)
+
 

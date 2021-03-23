@@ -1,7 +1,7 @@
 class Api::VideosController < ApplicationController
 
     def show
-        @video = Video.find(params[:id])
+        @video = Video.all.includes(:user, :comments).find_by(id: params[:id])
     end
 
     def index
@@ -21,7 +21,8 @@ class Api::VideosController < ApplicationController
     def video_params
         params.require(:video).permit(  :title,
                                         :description,
-                                        :uploader_id
+                                        :uploader_id,
+                                        :file
                                     )
     end
 

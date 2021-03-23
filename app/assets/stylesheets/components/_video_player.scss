@@ -100,6 +100,20 @@ video {
 .time-display-bar {
   background-color: rgb(255, 0, 22);
   height: 3px;
-  z-index: 2;
+  z-index: 3;
   
+}
+
+.time-display-bar-container {
+  display: flex;
+  // padding: 12px;
+  z-index: 3;
+  position: relative;
+  bottom: 50px;
+}
+
+.time-display-bar-container::before {
+  content: '';
+  display: block;
+  width: 12px;
 }

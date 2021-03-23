@@ -12,7 +12,7 @@ class VideoIndexItem extends React.Component {
     }
     
     watchVideo(e) {
-        this.props.history.push(`/watch/${this.props.video.id}`)
+        this.props.history.replace(`/watch/${this.props.video.id}`)
     }
 
     togglePlay(e) {

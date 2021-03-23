@@ -51,10 +51,10 @@ class VideoPlayer extends React.Component {
 
         let mediaTime = minuteValue + ':' + secondValue;
         let durationTime = dminuteValue + ':' + dsecondValue;
-        let barLength = Math.floor((vid.currentTime / vid.duration) * 100) + "%";
+        let barLength = Math.floor((vid.currentTime / vid.duration) * 100) * 0.97 + "%";
         this.setState({ "mediaTime": mediaTime })
         this.setState({ "timeWidth": barLength })
-        if (!this.state.duration) this.setState({ "duration": durationTime })
+        this.setState({ "duration": durationTime })
     }
 
     togglePlay() {
@@ -120,9 +120,12 @@ class VideoPlayer extends React.Component {
                 <div className="controls-bar">
                     <div className="time-display-bar-container">
                         <div className="time-display-bar"
-                        style={{ width: this.state.timeWidth }}>
-                        </div>
+                        style={{ width: this.state.timeWidth }}/>
                     </div>
+                    {/* <div className="time-display-bar-container">
+                        <div className="grey-display-bar"
+                        style={{ width: "97%" }}/>
+                    </div> */}
                     <div className="controls">
                     <button
                         className="play control-btn"
