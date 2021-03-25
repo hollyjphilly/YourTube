@@ -2,7 +2,7 @@ import React from 'react';
 import VideoPlayer from './video_player';
 import CommentIndex from '../comments/comment_index'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import MastheadContainer from "../masthead/masthead_container";
 
 class VideoShow extends React.Component {
     constructor(props) {
@@ -14,11 +14,12 @@ class VideoShow extends React.Component {
     }
 
     render() {
-        const { video, videoIds } = this.props;
+        const { video } = this.props;
         if (video) {
             return (
+            <><MastheadContainer />
             <div className="video-show">
-
+                
                 <VideoPlayer URL={video.movieURL} id={video.id} />
 
                 <div className="video-info">
@@ -49,7 +50,7 @@ class VideoShow extends React.Component {
 
                 <CommentIndex comments={video.comments} commenters={video.commenters}/>
 
-                </div>
+                </div></>
             );
         } else {
             return null

@@ -4,7 +4,6 @@ import { fetchVideo } from '../../actions/video_actions';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = ({ entities }, rProps) => {
-    debugger
     return {
         video: entities.videos[rProps.match.params.videoId]
     }
@@ -16,4 +15,4 @@ const mDTP = (dispatch) => {
     }
 }
 
-export default withRouter(connect(mSTP, mDTP)(VideoShow));
+export default connect(mSTP, mDTP)(VideoShow);

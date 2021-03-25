@@ -1,59 +1,21 @@
-#masthead {
-    height: 56px;
-    padding: 0 16px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-#left-masthead {
-    width: 200px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#right-masthead {
-    width: 300px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.content {
-    display:flex;
-    justify-content: center;
-    margin-top: 100px;
-}
-
-.background {
-    position: fixed;
-    background-color: white;
-    display: inline-block;
-    width: 100%;
-    bottom: 0;
-    top: 0;
-}
-
 p {
     font-family: $roboto;
     font-size: 14px;
-    font-weight: 400;
     color: $icon-gray;
 }
 
 a {
     font-family: $open-sans;
     font-size: 14px;
-    font-weight: 600;
     color: $blue;
     text-decoration: underline;
 }
 
 a:hover {
     cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+    outline: none;
 }

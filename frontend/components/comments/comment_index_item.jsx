@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class CommentIndexItem extends React.Component {
     render() {
-        debugger
         const { comment } = this.props;
         if (comment) {
             return (
@@ -24,6 +23,8 @@ class CommentIndexItem extends React.Component {
                     </div>
                 </div>
             );
+        } else {
+            return null
         }
 
     }

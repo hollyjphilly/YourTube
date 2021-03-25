@@ -1,9 +1,37 @@
+#masthead {
+    height: 56px;
+    padding: 0 27px 0 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#left-masthead {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#right-masthead {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 input {
     margin-left: 7px;
     padding: 10px;
     border: 1px solid rgb(213, 213, 213);
     color: rgb(116, 116, 116);
     border-radius: 5px;
+    outline: none;
+    box-shadow: none;
 }
 
 #masthead .icon {
@@ -21,17 +49,20 @@ input {
     margin-left: 12px;
 }
 
+.logo-image {
+    margin-left: -6px;
+}
+
 .logo-image:hover {
     cursor: pointer;
 }
 
 .hamburger {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     padding: 8px;
-    margin: 0 16px 0 3px;
     font-size: larger;
-    color: $hamburger-gray;
+    fill: #606060;
 }
 
 #search-container {
@@ -51,9 +82,9 @@ input {
     border: none;
     box-shadow: none;
     color: inherit;
-    font-family: $roboto;
+    font-family: $noto-sans;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 24px;
     margin-left: 4px;
     max-width: 100%;
@@ -104,4 +135,19 @@ img.user-icon {
 button.signin p {
     font-family: $roboto;
     font-weight: 500;
+}
+
+.hamburger-circle {
+    display: flex;
+    background-color: none;
+    margin-right: 16px;
+    border-radius: 50%;
+    transition: background-color 0.5s;
+    transform-origin: center center;
+    cursor: pointer;
+}
+
+.hamburger-circle:active {
+    background-color: rgb(140, 140, 140);
+    opacity: 1;
 }

@@ -1,0 +1,18 @@
+.feed {
+    position: fixed;
+    top: 62px;
+    left: 98px;
+    color: black;
+    z-index: 8888888;
+    font-weight: 500;
+    font-family: $open-sans;
+}
+
+.feed-content .video-index {
+    padding: 24px 24px 0px 0px;
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    top: 77px;
+    left: 90px;
+}

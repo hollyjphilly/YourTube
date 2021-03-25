@@ -14,25 +14,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 17px 14px;
+    padding: 16px 14px;
+}
+
+.leftnav-btn:first-child::before {
+    content: "";
+    display: block;
+    height: 4px;
 }
 
 .leftnav-btn:hover {
     background-color: #f0f0f0;
 }
 
-.leftnav-btn:first-child {
-    padding: 22px 14px;
+.leftnav-btn svg {
+    fill: #606060;
+    margin-bottom: 7px;
+    width: 24px;
+    height: 24px;
 }
 
-.leftnav-btn .icon {
-    font-size: large;
-    color: $icon-gray;
-    margin-bottom: 10px;
-}
 
-.leftnav-btn.active .icon {
-    color: red;
+.leftnav-btn.active svg {
+    fill: red;
 }
 
 .leftnav-btn.active span {
@@ -43,4 +47,5 @@
     font-size: 10px;
     color: $icon-gray;
     font-family: $roboto;
+    font-weight: 400;
 }

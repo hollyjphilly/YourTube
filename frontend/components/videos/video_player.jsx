@@ -6,7 +6,7 @@ class VideoPlayer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            paused: true,
+            paused: false,
             muted: false,
             settings: false,
             fullscreen: false,
@@ -108,7 +108,8 @@ class VideoPlayer extends React.Component {
         if (id) {
             return <>
             <div className="player">
-                <video custom-attribute={"autoplay"}
+                <video
+                    autoPlay
                     ref={this.video}
                     src={URL}
                     muted={this.state.muted}
@@ -175,6 +176,8 @@ class VideoPlayer extends React.Component {
                 </div>
             </div>
         </>
+        } else {
+            return null
         }
         
     }

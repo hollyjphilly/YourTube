@@ -1,7 +1,7 @@
 class Api::VideosController < ApplicationController
 
     def show
-        @video = Video.all.includes(:user, :comments).find_by(id: params[:id])
+        @video = Video.includes(:user, :comments).find_by(id: params[:id])
     end
 
     def index

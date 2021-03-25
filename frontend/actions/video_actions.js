@@ -22,9 +22,7 @@ export const fetchVideo = (videoId) => (dispatch) => {
     return (
         VideoAPIUtil.fetchVideo(videoId)
             .then(
-                (video) => {
-                    // debugger
-                    dispatch(receiveVideo(video))}
+                (video) => dispatch(receiveVideo(video))
             )
     )
 }
@@ -33,8 +31,7 @@ export const fetchVideos = () => (dispatch) => {
     return (
         VideoAPIUtil.fetchVideos()
             .then(
-                (videos) => dispatch(receiveAllVideos(videos)),
-                // response => {debugger}
+                (videos) => dispatch(receiveAllVideos(videos))
             )
     )
 }

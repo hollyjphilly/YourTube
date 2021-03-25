@@ -4,16 +4,14 @@ import { Redirect, Route, withRouter } from 'react-router-dom';
 
 const mSTP = (state) => {
     return {
-        loggedIn: Boolean(state.session.currentUser)
+        loggedIn: Boolean(state.session.id)
     }
 }
 
-// Way to call AuthRoute
-// <AuthRoute path="/" component={} />
-
-const Auth = ({ loggedIn, path, component: Component }) => {
+const Auth = ({ loggedIn, exact, path, component: Component }) => {
     return (
         <Route
+            exact={exact}
             path={path}
             render={(props) => {
                 if (loggedIn) {
@@ -21,20 +19,20 @@ const Auth = ({ loggedIn, path, component: Component }) => {
                 } else {
                     return <Component {...props} />
                 }
-            }}
-        />
+        }} />
     )
 }
 
-const Protected = ({ loggedIn, path, component: Component }) => {
+const Protected = ({ loggedIn, exact, path, component: Component }) => {
     return (
         <Route
+            exact={exact}
             path={path}
             render={(props) => {
-                if (loggedIn) {
-                    return <Component {...props} />
-                } else {
+                if (!loggedIn) {
                     return <Redirect to="/login" />
+                } else {
+                    return <Component {...props} />
                 }
             }}
         />
@@ -43,3 +41,6 @@ const Protected = ({ loggedIn, path, component: Component }) => {
 
 export const AuthRoute = withRouter(connect(mSTP)(Auth));
 export const ProtectedRoute = withRouter(connect(mSTP)(Protected));
+
+// Way to call AuthRoute
+// <AuthRoute path="/" component={} />
