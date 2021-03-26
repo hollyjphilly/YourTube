@@ -6,6 +6,8 @@
     z-index: 8888888;
     font-weight: 500;
     font-family: $open-sans;
+    padding-bottom: 25px;
+    text-transform: capitalize;
 }
 
 .feed-content .video-index {
@@ -13,6 +15,6 @@
     display: flex;
     justify-content: flex-start;
     position: fixed;
-    top: 77px;
+    top: 102px;
     left: 90px;
 }

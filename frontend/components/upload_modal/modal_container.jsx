@@ -1,18 +1,20 @@
 import { connect } from 'react-redux';
 import Modal from './modal';
 import { withRouter } from 'react-router-dom';
-import { postVideo } from '../../actions/video_actions';
+import { postVideo, clearErrors } from '../../actions/video_actions';
 
-const mSTP = ({ entities, session }, rProps) => {
+const mSTP = (state, rProps) => {
     return {
-        currentUser: entities.users[session.id]
+        currentUser: state.entities.users[state.session.id],
+        errors: state.errors.videos,
     }
 }
 
 const mDTP = dispatch => {
     return {
-        postVideo: video => dispatch(postVideo(video))
+        postVideo: (formData) => dispatch(postVideo(formData)),
+        clearErrors: () => dispatch(clearErrors())
     }
 }
 
-export default withRouter(connect(mSTP, null)(Modal));
+export default withRouter(connect(mSTP, mDTP)(Modal));

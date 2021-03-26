@@ -10,7 +10,7 @@ class Api::SessionsController < ApplicationController
             login(@user)
             render :show
         else
-            render json: ["invalid username or password"], status: :unprocessable_entity
+            render json: ["Invalid username or password"], status: :unprocessable_entity
         end
     end
 
@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
             logout
             render json: {}
         else
-            render json: ["no current user"], status: :not_found
+            render json: ["No current user"], status: :not_found
         end
     end
 

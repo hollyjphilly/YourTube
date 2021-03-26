@@ -16,7 +16,7 @@ const App = () => {
             <AuthRoute path="/login" component={SessionFormContainer} />
             <AuthRoute path="/signup" component={CreateAccountFormContainer} />
             <ProtectedRoute path="/feed/subscriptions" component={FeedContainer}/>
-            <ProtectedRoute path="/feed/likedvideos" component={FeedContainer}/>
+            <ProtectedRoute path="/feed/library" component={FeedContainer}/>
             <Route path="/feed/explore" component={FeedContainer}/>
             <Route exact path="/watch/:videoId" component={VideoShowContainer} />
             <Route exact path="/" component={Home} />

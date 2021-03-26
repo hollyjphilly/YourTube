@@ -14,7 +14,7 @@ class Api::VideosController < ApplicationController
         if @video.save
             render :show
         else
-            render json: ["you done effed up mah dude"], status: :unauthorized
+            render json: @video.errors.full_messages, status: :unprocessable_entity
         end
     end
 
@@ -22,7 +22,7 @@ class Api::VideosController < ApplicationController
         params.require(:video).permit(  :title,
                                         :description,
                                         :uploader_id,
-                                        :file
+                                        :moviefile
                                     )
     end
 

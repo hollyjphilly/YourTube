@@ -41,7 +41,7 @@ export default function LeftNav() {
                 </NavLink>
 
                 <NavLink
-                    exact to="/feed/likedvideos"
+                    exact to="/feed/library"
                     className="leftnav-btn">
                     <svg
                         viewBox="0 0 24 24"

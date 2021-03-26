@@ -10,6 +10,10 @@
 #  updated_at  :datetime         not null
 #
 class Video < ApplicationRecord
+
+validates :title, :uploader_id, presence: true
+
+# validate :ensure_moviefile
 	
 has_one_attached :moviefile
 has_one_attached :thumbnail
@@ -25,5 +29,11 @@ has_many :comments,
 has_many :commenters,
 	through: :comments,
 	source: :commenter
+
+# def ensure_moviefile
+# 	unless self.moviefile.content_type == "video/mp4"
+# 		errors[:video] << "must be an mp4 file."
+# 	end
+# end
 
 end

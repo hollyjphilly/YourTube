@@ -10,12 +10,10 @@ class Feed extends React.Component {
     }
 
     render() {
-        const {currentUser} = this.props;
         return <div className="feed-content">
-        {!currentUser ? <Redirect to="/login"/> : ""}
         <MastheadContainer />
         <LeftNav />
-        <h2 className="feed">Feed</h2>
+        <h2 className="feed">{this.props.match.path.split("/")[2]}</h2>
         <VideoIndexContainer />
     </div>
     }

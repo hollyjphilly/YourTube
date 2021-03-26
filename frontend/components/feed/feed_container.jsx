@@ -8,4 +8,4 @@ const mSTP = (state, rProps) => {
     }
 }
 
-export default connect(mSTP, null)(Feed);
+export default withRouter(connect(mSTP, null)(Feed));

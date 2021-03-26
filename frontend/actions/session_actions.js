@@ -56,10 +56,7 @@ export const createAccount = (user) => (dispatch) => {
         SessionAPIUtil.createAccount(user)
         .then(
             (user) => dispatch(receiveCurrentUser(user)),
-            (errors) => {
-                
-                dispatch(receiveErrors(errors.responseJSON))
-            }
+            (errors) => dispatch(receiveErrors(errors.responseJSON))
         )
     )
 }

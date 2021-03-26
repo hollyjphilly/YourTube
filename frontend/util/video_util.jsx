@@ -12,10 +12,12 @@ export const fetchVideos = () => {
     })
 }
 
-export const postVideo = (video) => {
+export const postVideo = (formData) => {
     return $.ajax({
         method: 'POST',
         url: `/api/videos`,
-        data: { video }
+        data: formData,
+        contentType: false,
+        processData: false,
     })
 }
