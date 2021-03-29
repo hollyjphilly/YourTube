@@ -16,8 +16,8 @@ Create an account or sign in as a demo user to enjoy the full YourTube video pla
 # Technologies
 **Hosting:**  Heroku & AWS <br />
 **Backend:**  PostgreSQL & Ruby on Rails API <br />
-**Frontend:**  React, Redux, JS & JSX, SCSS, HTML
-**Resources**  Google Fonts, Font Awesome Icons, YouTube SVGs, Vectr SVG Editor, Photopea Photoshop Alternative
+**Frontend:**  React, Redux, JS & JSX, SCSS, HTML <br />
+**Resources:**  Google Fonts, Font Awesome Icons, YouTube SVGs, Vectr SVG Editor, Photopea Photoshop Alternative
 <br /><br />
 
 
