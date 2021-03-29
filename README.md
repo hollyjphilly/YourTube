@@ -32,7 +32,7 @@ I learned and was able to implement:</p>
 <ul>
   <li>Conditional React component rendering to make the modal appear/disappear</li>
   <li>CSS modal overlay and styling</li>
-  <li>React event handling and HTML file-type inputs to implement the drag and drop uploading</li>
+  <li>React event handling and HTML file-type inputs to implement drag and drop</li>
   <li>Utilizing local state to autofill and persist data between multiple screens/steps</li>
   <li>Combining Rails ActiveStorage with my ActiveRecord models</li>
   <li>Connecting database with AWS image and video hosting</li>
