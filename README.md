@@ -22,8 +22,10 @@ Create an account or sign in as a demo user to enjoy the full YourTube video pla
 
 
 # Features
-### Upload Modal
-<img src="https://i.ibb.co/q5t8nvg/upload-modal.gif" alt="upload-modal" border="0">
+<p align="center">
+  <h3>Upload Modal</h3>
+  <img src="https://i.ibb.co/q5t8nvg/upload-modal.gif" alt="upload-modal" border="0">
+</p>
 <p>Creating this upload modal was an exciting part of the project! It involved learning more about both the backend (video hosting) AND the frontend (conditional rendering and styling). It also required lots of fun conditional logic to make things appear/disappear/update/and persist in order to complete the full upload process.
 <br /><br />
 I learned and was able to implement:</p>
