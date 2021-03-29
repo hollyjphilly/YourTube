@@ -6,10 +6,12 @@
 YourTube is a YouTube clone where users can watch, share, upload, like, and comment on videos as well as subscribe to other users.
 <br /><br />
 
+
 # Live Demo
 [Checkout the YourTube live demo here!](https://yourtube-hollyphillips.herokuapp.com/#/)<br />
 Create an account or sign in as a demo user to enjoy the full YourTube video platform experience.
 <br /><br />
+
 
 # Technologies
 **Hosting:**  Heroku & AWS <br />
@@ -17,6 +19,7 @@ Create an account or sign in as a demo user to enjoy the full YourTube video pla
 **Frontend:**  React, Redux, JS & JSX, SCSS, HTML
 **Resources**  Google Fonts, Font Awesome Icons, YouTube SVGs, Vectr SVG Editor, Photopea Photoshop Alternative
 <br /><br />
+
 
 # Features
 ### Upload Modal
@@ -32,6 +35,8 @@ I learned and was able to implement:</p>
   <li>Combining Rails ActiveStorage with my ActiveRecord models</li>
   <li>Connecting database with AWS image and video hosting</li>
 </ul>
+<br /><br />
+
 
 # Project Status: in development
 ### Upcoming Features
