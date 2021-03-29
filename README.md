@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://yourtube-seeds.s3.amazonaws.com/yourtube.svg">
-</p>
+</p><br />
 
 # Overview
 YourTube is a YouTube clone where users can watch, share, upload, like, and comment on videos as well as subscribe to other users.
@@ -35,7 +35,6 @@ I learned and was able to implement:</p>
   <li>Combining Rails ActiveStorage with my ActiveRecord models</li>
   <li>Connecting database with AWS image and video hosting</li>
 </ul>
-<br /><br />
 
 
 # Project Status: in development
