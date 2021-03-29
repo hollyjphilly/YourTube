@@ -34,7 +34,7 @@ I learned and was able to implement:</p>
   <li>Utilizing local state to autofill and persist data between multiple screens/steps</li>
   <li>Combining Rails ActiveStorage with my ActiveRecord models</li>
   <li>Connecting database with AWS image and video hosting</li>
-</ul><br /><br />
+</ul><br />
 
 
 # Project Status: in development
