@@ -30,6 +30,9 @@ has_many :commenters,
 	through: :comments,
 	source: :commenter
 
+has_many :likes,
+	as: :likeable
+
 # def ensure_moviefile
 # 	unless self.moviefile.content_type == "video/mp4"
 # 		errors[:video] << "must be an mp4 file."

@@ -39,4 +39,7 @@ class Comment < ApplicationRecord
         through: :parent_comment,
         source: :commenter
 
+    has_many :likes,
+        as: :likeable
+
 end

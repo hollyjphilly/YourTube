@@ -3,8 +3,8 @@ import * as VideoAPIUtil from '../util/video_util'
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_ALL_VIDEOS = "RECEIVE_ALL_VIDEOS";
 export const REMOVE_VIDEO = "REMOVE_VIDEO";
-export const RECEIVE_VIDEO_ERRORS = "RECEIVE_SESSION_ERRORS";
-export const CLEAR_VIDEO_ERRORS = "CLEAR_SESSION_ERRORS";
+export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
+export const CLEAR_VIDEO_ERRORS = "CLEAR_VIDEO_ERRORS";
 
 const receiveVideo = (video) => {
     return {

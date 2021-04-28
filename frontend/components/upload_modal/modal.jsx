@@ -55,11 +55,7 @@ class Modal extends React.Component {
         formData.append('video[description]', this.state.description)
         formData.append('video[uploader_id]', this.props.currentUser.id)
         formData.append('video[moviefile]', this.state.moviefile)
-        this.props.postVideo(formData).then(
-            this.setState({hidden: true}),
-            this.setState({ hidden: false })
-        );
-        
+        this.props.postVideo(formData);
     }
 
     updateTitle(e) {
