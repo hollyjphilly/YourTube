@@ -14,7 +14,6 @@ const videosReducer = (state = [], action) => {
             return action.video.comments
 
         case RECEIVE_COMMENT:
-            debugger
             newState.unshift(action.comment);
             return newState;
 

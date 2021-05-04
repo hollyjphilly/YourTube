@@ -5,7 +5,6 @@ function CommentIndex(props) {
     const { comments } = props;
 
     if (comments) {
-        debugger
         return (
             <div className="comment-index">
                 {comments.map(comment => (
