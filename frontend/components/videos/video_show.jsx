@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import VideoPlayer from './video_player';
-import CommentIndex from '../comments/comment_index'
+import CommentIndexContainer from '../comments/comment_index_container'
+// import CommentIndex from '../comments/comment_index'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MastheadContainer from "../masthead/masthead_container";
 import LikeButtons from "./video_like_buttons"
 import CommentForm from "../comments/comment_form_container"
 
 function VideoShow(props) {
-    // const { video } = props;
     const { video } = props;
 
     useEffect(() => {
@@ -55,8 +55,8 @@ function VideoShow(props) {
             </div>
 
             <p className="video-description">{video.description}</p>
-            <CommentForm video_id={video.id}/>
-            <CommentIndex comments={video.comments} commenters={video.commenters}/>
+            <CommentForm />
+            <CommentIndexContainer />
 
             </div></>
         );

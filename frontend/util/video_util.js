@@ -13,6 +13,14 @@ export const fetchVideos = () => {
     })
 }
 
+export const searchVideos = (query) => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/videos`,
+        data: { query }
+    })
+}
+
 export const postVideo = (formData) => {
     return $.ajax({
         method: 'POST',

@@ -3,10 +3,12 @@ import CommentForm from './comment_form';
 import { createComment,
          updateComment,
         deleteComment } from '../../actions/comment_actions';
+import { withRouter } from 'react-router';
 
 const mSTP = ({ entities, session }, rProps) => {
     return {
-        user: entities.users[session.id]
+        user: entities.users[session.id],
+        video_id: rProps.match.params.videoId 
     }
 }
 
@@ -18,4 +20,4 @@ const mDTP = (dispatch) => {
     }
 }
 
-export default connect(mSTP, mDTP)(CommentForm);
+export default withRouter(connect(mSTP, mDTP)(CommentForm));

@@ -1,25 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import VideoIndexItem from './video_index_item'
 
-class VideoIndex extends React.Component {
-    componentDidMount() {
-        this.props.fetchVideos();
-    }
+function VideoIndex(props) {
+    const { videos, searching } = props;
 
-    render() {
-        const { videos } = this.props;
-        if (videos) {
-            return (
-                <div className="video-index">
-                    {videos.map(video => (
-                        <VideoIndexItem
-                        key={video.id}
-                        video={video}/>
-                    ))}
-                </div>
-            );  
-        }
-        
+    useEffect(() => {
+        if (!searching) props.fetchVideos()
+    }, [])
+
+    if (videos) {
+        return (
+            <div className="video-index">
+                {videos.map(video => (
+                    <VideoIndexItem
+                    key={video.id}
+                    video={video}/>
+                ))}
+            </div>
+        );  
     }
 }
 

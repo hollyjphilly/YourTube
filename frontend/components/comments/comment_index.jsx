@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react';
 import CommentIndexItem from './comment_index_item'
 
 function CommentIndex(props) {
-    const [comments, setComments] = useState([])
-
-    useEffect(() => {
-        setComments(props.comments)
-    }, [props.comments])
+    const { comments } = props;
 
     if (comments) {
+        debugger
         return (
             <div className="comment-index">
                 {comments.map(comment => (
@@ -19,7 +16,7 @@ function CommentIndex(props) {
             </div>
         );
     } else {
-        return null
+        return "loading comments"
     }
 }
 

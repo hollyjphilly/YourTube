@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBarContainer from "./search_bar_container";
+import SearchBarContainer from "../search/search_bar_container";
 import SigninButton from "./signin_button";
 import UserIconButtonContainer from "./user_icon_button_container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

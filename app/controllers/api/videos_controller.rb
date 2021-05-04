@@ -6,7 +6,12 @@ class Api::VideosController < ApplicationController
     end
 
     def index
-        @videos = Video.all.includes(:user)
+        if params[:query]
+            @videos = Video.where('lower(title) like ?',
+                                  "%#{params[:query].downcase}%").includes(:user)
+        else
+            @videos = Video.all.includes(:user)
+        end
     end
     
     def create

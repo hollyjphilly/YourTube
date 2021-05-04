@@ -17,19 +17,12 @@ const videosReducer = (state = {}, action) => {
             return action.videos;
 
         case RECEIVE_VIDEO:
-            return Object.assign({}, state, { [action.video.id]: action.video })
+            const video = Object.assign({}, action.video)
+            delete video.comments
+            return Object.assign({}, state, { [action.video.id]: video });
 
         case RECEIVE_LIKE:
             newState[action.like.likeable_id].like = action.like;
-            return newState;
-
-        case RECEIVE_COMMENT:
-            let comments = newState[action.comment.video_id].comments;
-            if (comments[action.comment.id]) {
-                comments[action.comment.id] = action.comment
-            } else {
-                comments.push(action.comment)
-            }
             return newState;
 
         default:

@@ -52,6 +52,16 @@ export const fetchVideos = () => (dispatch) => {
     )
 }
 
+export const searchVideos = (query) => (dispatch) => {
+    return (
+        VideoAPIUtil.searchVideos(query)
+            .then(
+                (videos) => dispatch(receiveAllVideos(videos)),
+                errors => {console.log(errors.responseText)}
+            )
+    )
+}
+
 export const postVideo = (formData) => (dispatch) => {
     return (
         VideoAPIUtil.postVideo(formData)

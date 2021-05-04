@@ -4,11 +4,12 @@ function LikeButtons(props) {
     const { video, userId } = props;
     const [likes, setLikes] = useState(0)
     const [dislikes, setDislikes] = useState(0)
-    const [kind, setKind] = useState(video.like ? video.like.kind : null)
+    const [kind, setKind] = useState(null)
 
     useEffect(() => {
         setLikes(video.likesCount)
         setDislikes(video.dislikesCount)
+        setKind(video.like ? video.like.kind : null)
     }, [video])
 
     const handleLike = (currentLike, btnKind, model) => {

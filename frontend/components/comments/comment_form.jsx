@@ -12,12 +12,17 @@ function CommentForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        debugger
+        if (!user) {
+            props.history.push('/login')
+            return
+        }
         props.createComment({
             body,
             commenter_id: user.id,
             video_id
         })
+        setBody("")
+        toggleSubmitBtn(true)
     }
 
     function toggleSubmitBtn(boolean) {
@@ -26,7 +31,7 @@ function CommentForm(props) {
 
     return (<>
         <div id="comment-form-container">
-            {user.profile_image_url ? <img
+            {user ? <img
                 className="user-icon-bigger"
                 src={user.profile_image_url}>
             </img> : <FontAwesomeIcon

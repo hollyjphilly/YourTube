@@ -9,6 +9,7 @@ import SessionFormContainer from "./session_form/session_form_container";
 import CreateAccountFormContainer from "./account_form/create_account_form_container"
 import VideoShowContainer from './videos/video_show_container';
 import FeedContainer from "./feed/feed_container";
+import SearchContainer from "./search/search_results_container";
 import Home from "./home";
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
             <ProtectedRoute path="/feed/subscriptions" component={FeedContainer}/>
             <ProtectedRoute path="/feed/library" component={FeedContainer}/>
             <Route path="/feed/explore" component={FeedContainer}/>
-            <Route path="/feed/search" component={FeedContainer}/>
+            <Route path="/videos/search" component={SearchContainer}/>
             <Route exact path="/watch/:videoId" component={VideoShowContainer} />
             <Route exact path="/" component={Home} />
         </Switch>

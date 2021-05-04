@@ -22,7 +22,7 @@ belongs_to :user,
 	foreign_key: :uploader_id,
 	class_name: :User
 
-has_many :comments,
+has_many :comments, -> { order 'created_at desc' },
 	foreign_key: :video_id,
 	class_name: :Comment
 
