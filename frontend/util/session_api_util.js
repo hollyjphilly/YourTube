@@ -1,5 +1,4 @@
 export const createAccount = (user) => {
-    
     return $.ajax({
         method: 'POST',
         url: '/api/users',
@@ -7,7 +6,7 @@ export const createAccount = (user) => {
     })
 }
 
-export const removeAccount = (userId) => {
+export const deleteAccount = (userId) => {
     return $.ajax({
         method: 'DELETE',
         url: `/api/users/${userId}`,

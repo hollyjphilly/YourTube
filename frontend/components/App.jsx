@@ -18,6 +18,7 @@ const App = () => {
             <ProtectedRoute path="/feed/subscriptions" component={FeedContainer}/>
             <ProtectedRoute path="/feed/library" component={FeedContainer}/>
             <Route path="/feed/explore" component={FeedContainer}/>
+            <Route path="/feed/search" component={FeedContainer}/>
             <Route exact path="/watch/:videoId" component={VideoShowContainer} />
             <Route exact path="/" component={Home} />
         </Switch>

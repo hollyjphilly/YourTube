@@ -1,6 +1,6 @@
 .comment-display {
     display: flex;
-    margin: 24px 24px;
+    margin: 24px;
 }
 
 .comment-details {
@@ -46,4 +46,102 @@
     border-radius: 50%;
     font-size: 40px;
 }
+
+#comment-btn {
+    margin: 0;
+    margin-top: 5px;
+    background-color: #ccc;
+    width: 105px;
+}
+#cancel-btn {
+    margin: 0;
+    margin-top: 5px;
+    background-color: transparent;
+    color: $icon-gray;
+    width: 105px;
+}
+
+#comment-form {
+    width: 100%;
+
+    input {
+        width: 100%;
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 0;
+        padding-bottom: 5px;
+        margin: 0;
+        color: black;
+        font-family: $roboto;
+        font-size: 14px;
+    }
+
+    input:focus, input:active {
+        border-bottom: 2px solid black;
+    }
+
+    input:hover {
+        border-bottom: 1px solid black;
+        padding-bottom: 6px;
+    }
+
+}
+
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #000;
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before,  .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+
+#comment-form-container {
+    display: flex;
+    margin: 24px;
+    margin-bottom: 0;
+
+    .comment-details {
+        flex-grow: 1;
+        align-items: flex-end;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.comment-submit-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding: 0 24px;
+}
+
+
+
 

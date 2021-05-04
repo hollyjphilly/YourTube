@@ -33,9 +33,9 @@ export const clearErrors = () => {
     }
 }
 
-export const fetchVideo = (videoId) => (dispatch) => {
+export const fetchVideo = (videoId, userId) => (dispatch) => {
     return (
-        VideoAPIUtil.fetchVideo(videoId)
+        VideoAPIUtil.fetchVideo(videoId, userId)
             .then(
                 (video) => dispatch(receiveVideo(video))
             )

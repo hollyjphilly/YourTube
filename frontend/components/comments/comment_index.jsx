@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CommentIndexItem from './comment_index_item'
 
-class CommentIndex extends React.Component {
-    render() {
-        const { comments } = this.props;
-        if (comments) {
-            return (
-                <div className="comment-index">
-                    {comments.map(comment => (
-                        <CommentIndexItem
-                            key={comment.id}
-                            comment={comment}/>
-                    ))}
-                </div>
-            );
-        } else {
-            return null
-        }
+function CommentIndex(props) {
+    const [comments, setComments] = useState([])
 
+    useEffect(() => {
+        setComments(props.comments)
+    }, [props.comments])
+
+    if (comments) {
+        return (
+            <div className="comment-index">
+                {comments.map(comment => (
+                    <CommentIndexItem
+                        key={comment.id}
+                        comment={comment}/>
+                ))}
+            </div>
+        );
+    } else {
+        return null
     }
 }
 

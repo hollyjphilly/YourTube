@@ -12,6 +12,14 @@
 #                           PATCH  /api/videos/:id(.:format)                                                                api/videos#update {:format=>:json}
 #                           PUT    /api/videos/:id(.:format)                                                                api/videos#update {:format=>:json}
 #                           DELETE /api/videos/:id(.:format)                                                                api/videos#destroy {:format=>:json}
+#                 api_likes POST   /api/likes(.:format)                                                                     api/likes#create {:format=>:json}
+#                  api_like PATCH  /api/likes/:id(.:format)                                                                 api/likes#update {:format=>:json}
+#                           PUT    /api/likes/:id(.:format)                                                                 api/likes#update {:format=>:json}
+#                           DELETE /api/likes/:id(.:format)                                                                 api/likes#destroy {:format=>:json}
+#              api_comments POST   /api/comments(.:format)                                                                  api/comments#create {:format=>:json}
+#               api_comment PATCH  /api/comments/:id(.:format)                                                              api/comments#update {:format=>:json}
+#                           PUT    /api/comments/:id(.:format)                                                              api/comments#update {:format=>:json}
+#                           DELETE /api/comments/:id(.:format)                                                              api/comments#destroy {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
@@ -27,6 +35,8 @@ Rails.application.routes.draw do
 		namespace :api, defaults: {format: :json} do
 			resources :users, only: [:create, :destroy, :update]
 			resources :videos, only: [:show, :index, :create, :destroy, :update]
+			resources :likes, only: [:create, :destroy, :update]
+			resources :comments, only: [:create, :destroy, :update]
 			resource :session, only: [:create, :destroy]
 		end
 
