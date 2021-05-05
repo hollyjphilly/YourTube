@@ -7,11 +7,11 @@ export default () => {
     return <div className="main-content">
         <MastheadContainer />
         <LeftNav />
-        <div className="splash-banner"></div>
+        {/*<div className="splash-banner"></div>
         <div className="splash-gradient"></div>
         <div className="banner">
             <span>Discover your content</span>
-        </div>
+        </div>*/}
         <VideoIndexContainer />
     </div>
 }

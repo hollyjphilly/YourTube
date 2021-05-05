@@ -1,22 +1,13 @@
 .video-index {
-    padding: 24px 24px 0px 0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 12px;
-    position: fixed;
-    top: 32%;
-    left: 92px;
-    overflow: scroll;
-    height: 100%;
+    padding: 24px 24px 0px 92px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat( auto-fit, minmax(250px, auto) );
 }
 
 .video-index-item {
-    width: 300px;
-    min-height: 0;
-    flex-grow: 1; //100%
-    margin: 9px;
-    display: block;
+    flex-grow: 1;
     cursor: pointer;
 
     .vii-img {

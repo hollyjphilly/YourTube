@@ -52,13 +52,15 @@ function Masthead(props) {
             <SearchBarContainer />
             <div id="right-masthead">
                 <ModalContainer />
-                <a href="https://github.com/hollyjphilly">
+                <a href="https://github.com/hollyjphilly" 
+                    target="_blank">
                     <FontAwesomeIcon
                         className="icon"
                         icon={['fab', 'github']}
                     />
                 </a>
-                <a href="https://www.linkedin.com/in/hollyjphillips/">
+                <a href="https://www.linkedin.com/in/hollyjphillips/" 
+                    target="_blank">
                     <FontAwesomeIcon
                         className="icon"
                         icon={['fab', 'linkedin']}

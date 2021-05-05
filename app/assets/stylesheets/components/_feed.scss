@@ -1,20 +1,13 @@
 .feed {
-    position: fixed;
-    top: 62px;
-    left: 98px;
+    margin-left: 92px;
+    padding: 0;
     color: black;
     z-index: 6;
     font-weight: 500;
     font-family: $open-sans;
-    padding-bottom: 25px;
     text-transform: capitalize;
 }
 
 .feed-content .video-index {
-    padding: 24px 24px 0px 0px;
-    display: flex;
-    justify-content: flex-start;
-    position: fixed;
-    top: 102px;
-    left: 90px;
+    padding: 0 24px 0px 92px;
 }
