@@ -1,11 +1,15 @@
 import {
-    RECEIVE_COMMENT
+    RECEIVE_COMMENT,
+    DELETE_COMMENT,
 } from '../actions/comment_actions';
 import {
     RECEIVE_VIDEO,
 } from '../actions/video_actions';
+import {
+    RECEIVE_LIKE
+} from '../actions/like_actions';
 
-const videosReducer = (state = [], action) => {
+const commentsReducer = (state = [], action) => {
     Object.freeze(state);
     let newState = [...state]
     switch (action.type) {
@@ -17,9 +21,25 @@ const videosReducer = (state = [], action) => {
             newState.unshift(action.comment);
             return newState;
 
+        case DELETE_COMMENT:
+            return newState.filter(comment => comment.id != action.commentId);
+
+        case RECEIVE_LIKE:
+            if (action.like.likeable_type === "Comment") {
+                return newState.map((comment) => {
+                    if (comment.id !== action.like.likeable_id) {
+                        return comment
+                    }
+
+                    comment.like = action.like
+                    return comment
+                })
+            } else { return state; }
+            break;
+
         default:
             return state;
     }
 }
 
-export default videosReducer;
+export default commentsReducer;

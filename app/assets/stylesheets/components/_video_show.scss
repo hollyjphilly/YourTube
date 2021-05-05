@@ -40,16 +40,7 @@
         align-items: center;
         height: 40px;
 
-        .blue {
-            fill: #0F5FD4;
-            color: #0F5FD4;
-        }
-
-        .grey {
-            fill: #909090;
-            color: #909090;
-        }
-
+        
         button {
             display: flex;
             align-items: center;
@@ -58,18 +49,19 @@
             border: none;
             background-color: transparent;
             cursor: pointer;
-
+            
             div {
-                letter-spacing: 0.25px;
+                letter-spacing: 0.3px;
+                font-size: 14px;
+                font-weight: 600;
             }
-
+            
             svg {
                 height: 36px;
-                width: 36px;
                 width: 24px;
                 padding: 6px;
             }
-
+            
             
         }
     }
@@ -90,7 +82,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 17px;
-
+    
     h3 {
         font-weight: bold;
         color: black;
@@ -102,7 +94,7 @@
         white-space: normal;
         text-transform: capitalize;
     }
-
+    
     p {
         margin: 0;
         color: #606060;
@@ -140,3 +132,13 @@
     justify-content: space-between;
 }
 
+
+.blue {
+    fill: #0F5FD4;
+    color: #0F5FD4;
+}
+
+.grey {
+    fill: #909090;
+    color: #909090;
+}

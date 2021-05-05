@@ -5,9 +5,6 @@ import {
 import {
     RECEIVE_LIKE
 } from '../actions/like_actions';
-import {
-    RECEIVE_COMMENT
-} from '../actions/comment_actions';
 
 const videosReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -22,8 +19,13 @@ const videosReducer = (state = {}, action) => {
             return Object.assign({}, state, { [action.video.id]: video });
 
         case RECEIVE_LIKE:
-            newState[action.like.likeable_id].like = action.like;
-            return newState;
+            if (action.like.likeable_type === "Video") {
+                newState[action.like.likeable_id].like = action.like;
+                return newState;
+            } else {
+                return state;
+            }
+            break;
 
         default:
             return state;

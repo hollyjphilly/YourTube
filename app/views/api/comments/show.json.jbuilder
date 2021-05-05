@@ -4,5 +4,7 @@ json.commenter do
         :id, :username, :profile_image_url
 end
 json.date time_ago_in_words(@comment.created_at) + " ago"
-json.likesCount @comment.likes.length
-json.liked @comment.likes.find_by(liker_id: @userId) ? true : false
+like = @comment.likes.select { |like| like.liker_id == @userId }
+json.like like[0]
+json.likesCount @comment.likes.select { |like| like.kind == "like" }.length
+json.dislikesCount @comment.likes.select { |like| like.kind == "dislike" }.length

@@ -1,11 +1,19 @@
 import * as CommentAPIUtil from '../util/comment_util'
 
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
+export const DELETE_COMMENT = "DELETE_COMMENT";
 
 const receiveComment = (comment) => {
     return {
         type: RECEIVE_COMMENT,
         comment
+    }
+}
+
+const removeComment = (commentId) => {
+    return {
+        type: DELETE_COMMENT,
+        commentId
     }
 }
 
@@ -29,11 +37,11 @@ export const updateComment = (comment) => (dispatch) => {
     )
 }
 
-export const deleteComment = (comment) => (dispatch) => {
+export const deleteComment = (commentId) => (dispatch) => {
     return (
-        CommentAPIUtil.deleteComment(comment)
+        CommentAPIUtil.deleteComment(commentId)
             .then(
-                (comment) => dispatch(receiveComment(comment)),
+                (commentId) => dispatch(removeComment(commentId)),
                 (errors) => console.log(errors.responseText)
             )
     )

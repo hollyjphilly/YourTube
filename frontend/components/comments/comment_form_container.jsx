@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import CommentForm from './comment_form';
 import { createComment,
-         updateComment,
-        deleteComment } from '../../actions/comment_actions';
+         updateComment } from '../../actions/comment_actions';
 import { withRouter } from 'react-router';
 
 const mSTP = ({ entities, session }, rProps) => {
@@ -15,8 +14,7 @@ const mSTP = ({ entities, session }, rProps) => {
 const mDTP = (dispatch) => {
     return {
         createComment: (comment, userId) => dispatch(createComment(comment)),
-        updateComment: (comment) => dispatch(updateComment(comment)),
-        deleteComment: (comment) => dispatch(deleteComment(comment))
+        updateComment: (comment) => dispatch(updateComment(comment))
     }
 }
 
