@@ -43,19 +43,11 @@ I learned and was able to implement:</p>
 ### Upcoming Features
 <ul>
   <li>Return to index or video show page after publishing a video</li>
-  <li>Fix Video Index responsive sizing</li>
   <li>Add my videos section to Library page</li>
   <li>Delete video functionality on modal, my videos page, video show page</li>
-  <li>Video Player: add speed settings dropdown and time scrubber using "range"</li>
-  <li>Add hover effects to top masthead nav icons</li>
+  <li>Video Player: add time scrubber using "range"</li>
   <li>Add upload thumbnail functionality</li>
   <li>Create proper seeds</li>
-  <li>Add create new, create reply, and delete comments functionality</li>
-  <li>Utilizing local state to autofill and persist data between multiple screens/steps</li>
-  <li>Add Reccommended Bar to Video Show page</li>
-  <li>Add liking functionality to videos and comments</li>
-  <li>Add functionality to search bar</li>
-  <li>Create left pop-up modal</li>
   <li>Add subscribe functionality</li>
   <li>Filter the left nav sections/components accordingly</li>
   <li>Create channels/User Show page</li>
