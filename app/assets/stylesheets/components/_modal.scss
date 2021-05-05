@@ -1,7 +1,7 @@
 .modal {
   display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 9999; /* Sit on top */
+  z-index: 6; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -148,32 +148,13 @@
     margin-left: -9px;
 }
 
-
-
-// .uploads-details {
-//     padding: 0 50px;
-//     display: inline-block;
-// }
-
 .uploads-details-inputs-container {
     display: flex;
-    // flex-wrap: wrap;
     flex-direction: row;
-    // gap: 25px;
-    // justify-content: stretch;
-    // position: relative;
 }
 
 .upload-input {
-//     position: relative;
-//     box-sizing: border-box;
-//     display: block;
-    // margin-right: 25px;
     position: relative;
-    // display: block;
-
-    // width: 100%;
-    // z-index: 5;
 
     textarea:focus + #upload-description-label,
     input:focus + #upload-title-label {
@@ -185,18 +166,9 @@
     }
 }
 
-// .upload-input:first-child {
-//     height:80px;
-// }
-
 .uploads-details-inputs {
-    // display: flex;
-    // flex-direction: column;
     flex-grow: 1;
     margin: 25px 0 25px 50px;
-    // box-sizing: border-box;
-    
-    // width: 100%;
 }
 
 #upload-header {
@@ -207,15 +179,8 @@
 }
 
 .upload-text {
-//     box-sizing: border-box;
-//     font-size: 16px;
-//     display: block;
-//     height: 100%;
-    // margin-right: 25px;
     width:100%;
     margin: 0 0 25px 0;
-    // min-width: 0;
-    // justify-self: inherit;
 }
 .uploads-details-preview {
     margin: 25px 50px 25px 25px;

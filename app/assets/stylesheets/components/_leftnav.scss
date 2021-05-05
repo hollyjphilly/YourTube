@@ -49,3 +49,97 @@
     font-family: $roboto;
     font-weight: 400;
 }
+
+.left-popup-nav {
+    height: 100%;
+    z-index: 7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    
+    overflow-x: hidden;
+    transition: 0.3s;
+    width: 0;
+}
+
+#popup-header {
+    height: 56px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.slide-in {
+    width: 240px;
+}
+
+.almost-modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 6; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+  transition: 3s;
+}
+
+.hide {
+    display: none;
+}
+
+#popup-links {
+    padding: 16px 0;
+
+    a:first-child {
+        margin-left: 0;
+    }
+}
+
+.popup-link {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 24px 0;
+}
+
+.popup-link.active {
+    background-color: #e8e8e8;
+}
+
+.popup-link:hover {
+    background-color: #f0f0f0;
+}
+
+.popup-link svg {
+    fill: #606060;
+    margin-bottom: 7px;
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+}
+
+
+.popup-link.active svg {
+    fill: red;
+}
+
+.popup-link.active span {
+    font-weight: bold;
+    color: black;
+}
+
+.popup-link span {
+    color: $icon-gray;
+    font-family: $roboto;
+    font-size: 14px;
+    font-weight: 400;
+}

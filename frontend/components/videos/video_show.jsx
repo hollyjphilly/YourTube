@@ -61,7 +61,7 @@ function VideoShow(props) {
             </div></>
         );
     } else {
-        return null
+        return <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     }
         
 }
