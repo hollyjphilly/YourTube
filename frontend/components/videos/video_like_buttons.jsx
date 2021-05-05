@@ -68,6 +68,8 @@ function LikeButtons(props) {
     return <div id="likes-box">
         <p>{`${0} views • ${props.video.published}`}</p>
         <div className="flex-row">
+            <div className={kind ? "border-blue flex-row"
+             : "border-grey flex-row"}>
             <button  title="I like this" 
                     onClick={() => handleLike(video.like, "like", "Video")}
                     className={kind === "like" ?
@@ -85,7 +87,7 @@ function LikeButtons(props) {
                     <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"></path>
                 </svg>
                 <div>{dislikes}</div>
-            </button>
+            </button></div>
             <button title="Share" className="grey">
                 <svg viewBox="0 0 24 24" className="grey">
                     <path d="M14 9V3L22 12L14 21V15C8.44 15 4.78 17.03 2 21C3.11 15.33 6.22 10.13 14 9Z"></path>

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import VideoPlayer from './video_player';
 import CommentIndexContainer from '../comments/comment_index_container'
-// import CommentIndex from '../comments/comment_index'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MastheadContainer from "../masthead/masthead_container";
 import LikeButtons from "./video_like_buttons"
 import CommentForm from "../comments/comment_form_container"
+import SidebarContainer from "../sidebar/sidebar_container";
+
 
 function VideoShow(props) {
     const { video } = props;
@@ -22,8 +23,10 @@ function VideoShow(props) {
     }, [])
 
     if (video) {
-        return (
-        <><MastheadContainer />
+        return (<>
+        <MastheadContainer />
+        <div className="center">
+        <div className="flex-row ninety-five">
         <div className="video-show">
             
             {/* <VideoPlayer URL={video.movieURL} id={video.id} /> */}
@@ -58,7 +61,10 @@ function VideoShow(props) {
             <CommentForm />
             <CommentIndexContainer />
 
-            </div></>
+            </div>
+            <SidebarContainer />
+            </div></div>
+            </>
         );
     } else {
         return <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>

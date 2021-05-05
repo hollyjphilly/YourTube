@@ -75,3 +75,18 @@ button:hover {
     transform: translate(24px, 0);
   }
 }
+
+.ninety-five {
+  width: 100%;
+}
+
+@media (min-width: 1775px) {
+  .ninety-five {
+    width: 95%;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
