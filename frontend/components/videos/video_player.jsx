@@ -109,7 +109,7 @@ class VideoPlayer extends React.Component {
             return <>
             <div className="player">
                 <video
-                    autoPlay
+                    // autoPlay
                     ref={this.video}
                     src={URL}
                     muted={this.state.muted}

@@ -14,7 +14,6 @@ const videosReducer = (state = {}, action) => {
             return action.videos;
 
         case RECEIVE_VIDEO:
-            
             const video = Object.assign({}, action.video)
             delete video.comments
             return Object.assign({}, state, { [action.video.id]: video });

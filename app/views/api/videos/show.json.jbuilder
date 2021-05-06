@@ -4,6 +4,7 @@ json.movieURL url_for(@video.moviefile)
 json.thumbURL url_for(@video.thumbnail)
 json.user do
     json.extract! @video.user, :id, :username, :profile_image_url
+    json.subscribers @video.user.subscribers.length
 end
 json.date time_ago_in_words(@video.created_at) + " ago"
 like = @video.likes.select { |like| like.liker_id == @userId }

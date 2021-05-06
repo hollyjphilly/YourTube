@@ -107,6 +107,20 @@
     outline: none;
 }
 
+.subbed-btn {
+    background-color: #ececec;;
+    border-radius: 2px;
+    color: #606060;
+    padding: 10px 16px;;
+    margin: auto 4px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-family: $roboto;
+    font-weight: 400;
+    border: none;
+    outline: none;
+}
+
 .flex-row {
     display:flex;
     flex: row;

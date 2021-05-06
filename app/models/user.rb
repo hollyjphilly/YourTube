@@ -38,6 +38,14 @@ class User < ApplicationRecord
         source: :likeable,
         source_type: :Video
 
+    has_many :subscriptions,
+        foreign_key: :subscriber_id,
+        class_name: :Subscribe
+    
+    has_many :subscribers,
+        foreign_key: :subscribee_id,
+        class_name: :Subscribe
+
     before_validation :ensure_session_token
 
     attr_reader :password

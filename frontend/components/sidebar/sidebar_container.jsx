@@ -9,10 +9,4 @@ const mSTP = ({ entities }, rProps) => {
     }
 }
 
-const mDTP = (dispatch) => {
-    return {
-        fetchVideos: () => dispatch(fetchVideos())
-    }
-}
-
-export default withRouter(connect(mSTP, mDTP)(Sidebar));
+export default withRouter(connect(mSTP)(Sidebar));

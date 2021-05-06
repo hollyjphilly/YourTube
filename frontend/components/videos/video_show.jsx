@@ -9,10 +9,15 @@ import SidebarContainer from "../sidebar/sidebar_container";
 
 
 function VideoShow(props) {
-    const { video } = props;
-
+    const { videos, video, userId, subs } = props;
+    const [subscribed, setSubscribed] = useState(null)
+    const [subCount, setSubCount] = useState(0)
+    
     useEffect(() => {
-        props.fetchVideo(props.match.params.videoId, props.userId).then(
+        if (Object.keys(videos).length <= 1) {
+            props.fetchVideos()
+        }
+        props.fetchVideo(props.match.params.videoId, userId).then(
            (res) => {
                document.title = `${res.video.title} - YourTube`
             }
@@ -22,7 +27,33 @@ function VideoShow(props) {
         }
     }, [])
 
+    useEffect(() => {
+        if (video) { 
+            setSubscribed(subs.includes(video.user.id))
+            setSubCount(video.user.subscribers)
+        }
+    }, [video, subs])
+
+    function handleSubscribe() {
+        if (userId) {
+            if (subscribed === true) {
+                props.deleteSubscribe({ subscriber_id: userId, subscribee_id: video.user.id })
+                setSubscribed(false)
+                setSubCount(subCount - 1)
+            } else {
+                if(subscribed === false) {
+                    props.createSubscribe({ subscriber_id: userId, subscribee_id: video.user.id })
+                    setSubscribed(true)
+                    setSubCount(subCount + 1)
+                }
+            }
+        } else {
+            props.history.push('/login')
+        }
+    }
+
     if (video) {
+        
         return (<>
         <MastheadContainer />
         <div className="center">
@@ -49,11 +80,15 @@ function VideoShow(props) {
 
                     <div className="uploader-details" id="desc">
                         <h3>{video.user.username}</h3>
-                        <p>222K subscribers</p>
+                        <p>{`${subCount} subscriber${subCount === 1 ? "" : "s"}`}</p>
                     </div>
                 </div>
 
-                <button className="sub-btn">SUBSCRIBE</button>
+                {video.user.id === userId ? "" 
+                : <button className={subscribed ? "subbed-btn" : "sub-btn"}
+                        onClick={handleSubscribe}
+                >{ subscribed ? 
+                "SUBSCRIBED" : "SUBSCRIBE"}</button>}
 
             </div>
 

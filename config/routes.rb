@@ -20,6 +20,8 @@
 #               api_comment PATCH  /api/comments/:id(.:format)                                                              api/comments#update {:format=>:json}
 #                           PUT    /api/comments/:id(.:format)                                                              api/comments#update {:format=>:json}
 #                           DELETE /api/comments/:id(.:format)                                                              api/comments#destroy {:format=>:json}
+#            api_subscribes POST   /api/subscribes(.:format)                                                                api/subscribes#create {:format=>:json}
+#             api_subscribe DELETE /api/subscribes/:id(.:format)                                                            api/subscribes#destroy {:format=>:json}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>:json}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>:json}
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
 			resources :videos, only: [:show, :index, :create, :destroy, :update]
 			resources :likes, only: [:create, :destroy, :update]
 			resources :comments, only: [:create, :destroy, :update]
+			resources :subscribes, only: [:create, :destroy]
 			resource :session, only: [:create, :destroy]
 		end
 
