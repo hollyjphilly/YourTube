@@ -68,24 +68,24 @@ class SessionForm extends React.Component {
                         <div className="session-input">
                             <input
                                 autoFocus
-                                id="session-text"
+                                className="session-text"
                                 type="text"
                                 value={this.state.username}
                                 placeholder=" "
                                 onChange={this.update('username')}/>
                             <label
-                                id="session-label">Username</label>
+                                className="session-label">Username</label>
                         </div>
 
                         <div className="session-input">
                             <input
-                                id="session-text"
+                                className="session-text"
                                 type="password"
                                 value={this.state.password}
                                 placeholder=" "
                                 onChange={this.update('password')} />
                             <label
-                                id="session-label">Password</label>
+                                className="session-label">Password</label>
                         </div>
                         {errors ? errors.map(er => (
                             <div className="errors" key={er.id}><svg className="errors-icon" viewBox="0 0 24 24">

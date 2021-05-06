@@ -60,58 +60,58 @@ class AccountForm extends React.Component {
                             <div className="session-input">
                                 <input
                                     autoFocus
-                                    id="session-text"
+                                    className="session-text"
                                     type="text"
                                     value={this.state.first_name}
                                     placeholder=" "
                                     onChange={this.update('first_name')} />
                                 <label
-                                    id="session-label">First name</label>
+                                    className="session-label">First name</label>
                             </div>
 
                             <div className="session-input">
                                 <input
-                                    id="session-text"
+                                    className="session-text"
                                     type="text"
                                     value={this.state.last_name}
                                     placeholder=" "
                                     onChange={this.update('last_name')} />
                                 <label
-                                    id="session-label">Last name</label>
+                                    className="session-label">Last name</label>
                             </div>
                         </div>
 
                         <div className="session-input">
                             <input
-                                id="session-text"
+                                className="session-text"
                                 type="text"
                                 value={this.state.email}
                                 placeholder=" "
                                 onChange={this.update('email')} />
                             <label
-                                id="session-label">Your email address</label>
+                                className="session-label">Your email address</label>
                         </div>
 
                         <div className="session-input">
                             <input
-                                id="session-text"
+                                className="session-text"
                                 type="text"
                                 value={this.state.username}
                                 placeholder=" "
                                 onChange={this.update('username')} />
                             <label
-                                id="session-label">Username</label>
+                                className="session-label">Username</label>
                         </div>
 
                         <div className="session-input">
                             <input
-                                id="session-text"
+                                className="session-text"
                                 type="password"
                                 value={this.state.password}
                                 placeholder=" "
                                 onChange={this.update('password')} />
                             <label
-                                id="session-label">Password</label>
+                                className="session-label">Password</label>
                         </div>
                         {errors ? errors.map(er => (
                             <div className="errors" key={er.id}><svg className="errors-icon" viewBox="0 0 24 24">

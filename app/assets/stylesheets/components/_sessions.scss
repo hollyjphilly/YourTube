@@ -216,7 +216,7 @@ button.signin {
     z-index: 5;
 }
 
-#session-text {
+.session-text {
     padding: 15px;
     border: 1px solid #dadce0;
     outline: none;
@@ -224,26 +224,26 @@ button.signin {
     color: #000;
 }
 
-#session-text:focus {
+.session-text:focus {
     outline: none;
     box-shadow: inset 0 0 0 0.5pt #1a73e8;
     border-color: #1a73e8;
     
 }
 
-#session-text:focus + #session-label,
-input:not([value=""]) + #session-label {
+.session-text:focus + .session-label,
+input:not([value=""]) + .session-label {
     top: 2px;
     left: -2px;
     color: #1a73e8;
     transform: scale(.75);
 }
 
-input:not(:focus) + #session-label {
+input:not(:focus) + .session-label {
     color: #757575;
 }
 
-#session-label {
+.session-label {
     padding: 0 10px;
     position: absolute;
     top: 30px;
