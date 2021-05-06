@@ -1,6 +1,6 @@
 @videos.each do |video|
      json.set! video.id do   
-        json.extract! video, :id, :title
+        json.extract! video, :id, :title, :description
         json.movieURL url_for(video.moviefile)
         json.thumbURL url_for(video.thumbnail)
         json.user do

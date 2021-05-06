@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import VideoIndexContainer from '../videos/video_index_container';
+import VideoRowsContainer from '../videos/video_rows_container';
 import LeftNav from "../leftnav";
 import MastheadContainer from "../masthead/masthead_container";
 
@@ -22,7 +22,7 @@ function SearchResults(props) {
         <MastheadContainer />
         <LeftNav />
         <h2 className="feed">Search Results</h2>
-        <VideoIndexContainer searching={true}/>
+        <VideoRowsContainer searching={true}/>
     </div>
     } else {
         return <div className="feed-content">
