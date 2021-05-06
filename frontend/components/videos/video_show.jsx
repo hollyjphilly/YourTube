@@ -28,6 +28,17 @@ function VideoShow(props) {
     }, [])
 
     useEffect(() => {
+        props.fetchVideo(props.match.params.videoId, userId).then(
+           (res) => {
+               document.title = `${res.video.title} - YourTube`
+            }
+        )
+        return () => {
+            document.title = "YourTube";
+        }
+    }, [props.match.params.videoId])
+
+    useEffect(() => {
         if (video) { 
             setSubscribed(subs.includes(video.user.id))
             setSubCount(video.user.subscribers)

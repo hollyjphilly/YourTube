@@ -1,8 +1,14 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 function SidebarItem(props) {
     const { video } = props;
-    return <div className="sidebar-item">
+
+    function visit() {
+        props.history.push(`/watch/${video.id}`)
+    }
+
+    return <div className="sidebar-item" onClick={visit}>
         <div className="sidebar-thumbnail">
             <img src={video.thumbURL} alt={`${video.title} thumbnail`}></img>
         </div>
@@ -14,4 +20,4 @@ function SidebarItem(props) {
     </div>
 }
 
-export default SidebarItem;
+export default withRouter(SidebarItem);
