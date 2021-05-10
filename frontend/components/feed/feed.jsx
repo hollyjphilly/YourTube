@@ -3,19 +3,15 @@ import VideoIndexContainer from '../videos/video_index_container';
 import LeftNav from "../leftnav";
 import MastheadContainer from "../masthead/masthead_container";
 
-class Feed extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+function Feed(props) {
+    const sectionHeader = props.match.path.split("/")[2]
 
-    render() {
-        return <div className="feed-content">
+    return <div className="feed-content">
         <MastheadContainer />
         <LeftNav />
-        <h2 className="feed">{this.props.match.path.split("/")[2]}</h2>
-        <VideoIndexContainer />
+        <h2 className="feed">{sectionHeader}</h2>
+        <VideoIndexContainer section={sectionHeader}/>
     </div>
-    }
 }
 
 export default Feed;

@@ -71,8 +71,7 @@ function VideoShow(props) {
         <div className="flex-row ninety-five">
         <div className="video-show">
             
-            {/* <VideoPlayer URL={video.movieURL} id={video.id} /> */}
-            <VideoPlayer URL="https://drive.google.com/uc?export=download&id=1yTv0ET1Gd5ljA31T95CD895lc9mzz4ld" id={video.id} />
+            <VideoPlayer URL={video.movieURL} id={video.id} />
 
             <div id="video-info">
                 <h1>{video.title}</h1>

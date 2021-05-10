@@ -29,14 +29,7 @@ class VideoIndexItem extends React.Component {
         if (video) {
             return (
             <div className="video-index-item">
-                <video ref={this.reffered}
-                    className="vii-img"
-                    src={video.movieURL}
-                    onClick={this.watchVideo}
-                    onMouseEnter={this.togglePlay}
-                    onMouseLeave={this.togglePause}
-                    muted={true}
-                    loop={true}/>
+                <img onClick={this.watchVideo} className="vii-img" src={video.thumbURL} />
                 <div className="vii-display">
                     {!video.user.profile_image_url ? <FontAwesomeIcon 
                         className="vii-no-user-icon"
@@ -46,6 +39,7 @@ class VideoIndexItem extends React.Component {
                 <div className="vii-info">
                         <h3 onClick={this.watchVideo}>{video.title}</h3>
                         <p>{video.user.username}</p>
+                        <p>{`50 views • ${video.date}`}</p>
                     </div>
                 </div>
             </div>

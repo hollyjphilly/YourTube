@@ -13,6 +13,9 @@
     .vii-img {
         margin-bottom: 12px;
         background-color: #e0e0e0;
+        object-fit: cover;
+        object-position: left top;
+        width: 100%;
     }
 
     .vii-display {
@@ -33,7 +36,7 @@
         font-weight: 500;
         color: black;
         font-family: $roboto;
-        margin: 0 0 3px;
+        margin: 3px 0 5px;
         font-size: 14px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -43,10 +46,13 @@
     p {
         margin: 0;
         color: #606060;
-        text-transform: capitalize;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+
+    p:first-of-type {
+        text-transform: capitalize;
     }
 }
 }

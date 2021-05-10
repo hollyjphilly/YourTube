@@ -3,9 +3,10 @@ import VideoIndex from './video_index';
 import { fetchVideos } from '../../actions/video_actions';
 import { withRouter } from 'react-router-dom';
 
-const mSTP = ({ entities }, rProps) => {
+const mSTP = ({ entities, session }, rProps) => {
     return {
-        videos: Object.values(entities.videos)
+        videos: Object.values(entities.videos),
+        userId: session.id
     }
 }
 

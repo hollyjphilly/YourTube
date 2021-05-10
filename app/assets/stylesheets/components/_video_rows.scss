@@ -10,6 +10,7 @@
     height: 202px;
     max-width: 1096px;
     display: flex;
+    cursor: pointer;
 }
 
 @media (max-width: 1000px) {
@@ -26,7 +27,7 @@
     background-color: #e0e0e0;
 
     img {
-        width: 100%;
+        width: 360px;
         height: 202px;
     }
 }
@@ -36,12 +37,40 @@
     font-size: 12px;
     color: #606060;
 
+
     p {
         margin-bottom: 3px;
     }
 
     p:first-of-type {
         text-transform: capitalize;
+    }
+
+    p:last-of-type {
+        --lh: 1.4rem;
+    line-height: var(--lh);
+    --max-lines: 3;
+    position: relative;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+    padding-right: 1rem;
+    white-space: break-spaces;
+    }
+
+    p:last-of-type::before {
+        position: absolute;
+        content: "...";
+        inset-block-end: 0; /* "bottom" */
+        inset-inline-end: 0; /* "right" */
+    }
+
+    p:last-of-type::after {
+        content: "";
+        position: absolute;
+        inset-inline-end: 0; /* "right" */
+        width: 1rem;
+        height: 1rem;
+        background: white;
     }
 
     h3 {

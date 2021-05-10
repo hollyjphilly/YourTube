@@ -1,3 +1,4 @@
+puts "-------------JSON JBUILDER----------------"
 json.extract! @video, :id, :title, :description, :uploader_id
 json.published @video.created_at.strftime("%b %d, %Y")
 json.movieURL url_for(@video.moviefile)

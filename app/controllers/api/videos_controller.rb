@@ -1,16 +1,26 @@
 class Api::VideosController < ApplicationController
 
     def show
-        @video = Video.includes(:user, :comments, :likes).find_by(id: params[:id])
+        puts "\n------------------VIDEO CONTROLLER #SHOW-----------------------"
+        @video = Video.includes(
+                                    :likes, 
+                                    thumbnail_attachment: [:blob], 
+                                    moviefile_attachment: [:blob], 
+                                    comments: [:commenter, :likes], 
+                                    user: [:subscribers]
+                                    
+                                ).find_by(id: params[:id])
+
         @userId = params[:userId].to_i
     end
-
+    
     def index
+        puts "\n------------------VIDEO CONTROLLER #INDEX-----------------------"
         if params[:query]
             @videos = Video.where('lower(title) like ?',
-                                  "%#{params[:query].downcase}%").includes(:user)
+                                  "%#{params[:query].downcase}%").includes(:user, thumbnail_attachment: [:blob], moviefile_attachment: [:blob])
         else
-            @videos = Video.all.includes(:user)
+            @videos = Video.all.includes(:user, thumbnail_attachment: [:blob], moviefile_attachment: [:blob])
         end
     end
     
