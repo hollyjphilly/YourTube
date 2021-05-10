@@ -4,8 +4,11 @@ import { fetchVideos } from '../../actions/video_actions';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = ({ entities, session }, rProps) => {
+    const subscriptions  = ((entities.users && session.id) ? entities.users[session.id].subscriptions 
+    : [])
     return {
         videos: Object.values(entities.videos),
+        subs: subscriptions,
         userId: session.id
     }
 }

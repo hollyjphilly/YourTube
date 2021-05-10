@@ -19,12 +19,13 @@ end
 # Users
 User.create(username: 'demo', password: 'password', email:'jane@demoemail.com', first_name: 'Jane', last_name: 'McDemo', profile_image_url: 'https://i.ibb.co/x8170Cw/1516927665677-e-2159024400-v-beta-t-Rx-N5n-z8rd8da6-Wvi-LYt-F5-Ke-Tvv-Jib-FL1sw-NI45-QTo-U.jpg')
 User.create(username: 'hollyjphilly', password: 'password', email:'hello.hollyphillips@gmail.com', first_name: 'Holly', last_name: 'Phillips', profile_image_url: 'https://avatars.githubusercontent.com/u/61254925?v=4')
+User.create(username: 'Zoom Ninja', password: 'password', email:'contact@hollyjphillips.com', first_name: 'Holly', last_name: 'Phillips', profile_image_url: 'https://i.ibb.co/dGQnKTB/ZoomUser.png')
 User.create(username: 'banana', password: 'password', email:'banana@peel.com', first_name: 'bana', last_name: 'na', profile_image_url: 'https://i.ibb.co/XDTygG1/image.png')
 User.create(username: 'dinosaur', password: 'asteroid', email:'tee@rex.com', first_name: 'dino', last_name: 'saurus')
 
 
 # Videos
-vid1 = Video.create!(title: "Hype Feature Tour - MERN Stack Project", 
+vid1 = Video.create!(title: "Hype Tour - MERN Stack Project", 
     description: "HYPE is a social networking app for adults who haven't outgrown schoolyard games.", 
     uploader_id: 2)
 file = open("https://yourtube-seeds.s3.amazonaws.com/hype.mp4")
@@ -32,7 +33,7 @@ vid1.moviefile.attach(io: file, filename: "hype.mp4")
 file = open("https://yourtube-seeds.s3.amazonaws.com/hypethumb.png")
 vid1.thumbnail.attach(io: file, filename: "hypethumb.png")
 
-vid2 = Video.create!(title: "How I Got Into Software Engineering (in 60 seconds)", description: "Transcription: When the pandemic hit in March 2020, I was working for Dida Academy, a progressive learning center in Brooklyn, NY. The onset of quarantines meant my students and I had to transition to a remote classroom almost overnight. Being someone who loves to play with new tech, I used Glide ,a platform I had been teaching myself at the time, to build my students a web app that could serve all the functionality needed for an online classroom. I built the app in less than a week and then onboarded parents, students, and staff who continued to use it into this school year. Even after the app was deployed, I found myself still thinking about features I could add and googling all sorts of questions about APIs and data structures. At that point I began thinking, maybe this is something I should go into? And that’s how my journey into Software Engineering began. Since building the app, I’ve learned more about data structures, algorithms, multiple programming languages, and am fluent in more web stacks than I would have thought possible a year or two ago. I’m super excited to make an impact just like I did with the Dida Academy app as I continue my career in Software Engineering.", uploader_id: 2)
+vid2 = Video.create!(title: "How I Got Into Software Engineering (in 60 seconds)", description: "Transcription:\nWhen the pandemic hit in March 2020, I was working for Dida Academy, a progressive learning center in Brooklyn, NY. The onset of quarantines meant my students and I had to transition to a remote classroom almost overnight. Being someone who loves to play with new tech, I used Glide ,a platform I had been teaching myself at the time, to build my students a web app that could serve all the functionality needed for an online classroom. I built the app in less than a week and then onboarded parents, students, and staff who continued to use it into this school year. Even after the app was deployed, I found myself still thinking about features I could add and googling all sorts of questions about APIs and data structures. At that point I began thinking, maybe this is something I should go into? And that’s how my journey into Software Engineering began. Since building the app, I’ve learned more about data structures, algorithms, multiple programming languages, and am fluent in more web stacks than I would have thought possible a year or two ago. I’m super excited to make an impact just like I did with the Dida Academy app as I continue my career in Software Engineering.", uploader_id: 2)
 file = open("https://yourtube-seeds.s3.amazonaws.com/dida.mp4")
 vid2.moviefile.attach(io: file, filename: "dida.mp4")
 file = open("https://yourtube-seeds.s3.amazonaws.com/didathumb.png")
@@ -44,6 +45,17 @@ vid3.moviefile.attach(io: file, filename: "pokesweeper.mp4")
 file = open("https://yourtube-seeds.s3.amazonaws.com/pokethumb.png")
 vid3.thumbnail.attach(io: file, filename: "pokethumb.png")
 
+vid4 = Video.create!(title: "RelaTable Demo", description: "RelaTable is a SQL JOIN visualizer I made after learning about relational databases. Check it out at: <a href='https://hollyjphilly.github.io/RelaTable/'>https://hollyjphilly.github.io/RelaTable/</a>", uploader_id: 2)
+file = open("https://yourtube-seeds.s3.amazonaws.com/relatable.mp4")
+vid4.moviefile.attach(io: file, filename: "relatable.mp4")
+file = open("https://yourtube-seeds.s3.amazonaws.com/relatablethumb.png")
+vid4.thumbnail.attach(io: file, filename: "relatablethumb.png")
+
+vid5 = Video.create!(title: "My Top 5 Zoom Filters", description: "Top 5 Zoom Filters\n1. Div Life\n2. Wonder Woman\n3. Skynet\n4. Magical Forest\n5. YourTube Swag", uploader_id: 3)
+file = open("https://drive.google.com/uc?export=download&id=1ap6WFKEibYuW3KjJ8JT3lSDseONXuBDi")
+vid5.moviefile.attach(io: file, filename: "topText.mp4")
+file = open("https://yourtube-seeds.s3.amazonaws.com/topthumb.png")
+vid5.thumbnail.attach(io: file, filename: "topthumb.png")
 
 # Comments
 com1 = Comment.create!(body: "what a ride", commenter_id: 2, video_id: 1)

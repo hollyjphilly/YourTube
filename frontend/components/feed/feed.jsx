@@ -4,13 +4,36 @@ import LeftNav from "../leftnav";
 import MastheadContainer from "../masthead/masthead_container";
 
 function Feed(props) {
-    const sectionHeader = props.match.path.split("/")[2]
+    const section = props.match.path.split("/")[2]
+    let sectionHeader;
+    let secondHeader = null;
+
+    switch (section) {
+        case "explore":
+            sectionHeader = "Trending Videos";
+            break;
+
+        case "subscriptions":
+            sectionHeader = "Latest";
+            secondHeader = "Your Subscriptions";
+            break;
+
+        case "library":
+            sectionHeader = "Your Videos";
+            secondHeader = "Liked Videos";
+            break;
+    
+        default:
+            break;
+    }
 
     return <div className="feed-content">
         <MastheadContainer />
         <LeftNav />
         <h2 className="feed">{sectionHeader}</h2>
-        <VideoIndexContainer section={sectionHeader}/>
+        <VideoIndexContainer section={section}/>
+        {secondHeader ? <><h2 className="feed">{secondHeader}</h2>
+        <VideoIndexContainer section={secondHeader}/></> : ""}
     </div>
 }
 
