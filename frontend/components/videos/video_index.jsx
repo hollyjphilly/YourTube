@@ -1,46 +1,54 @@
 import React, { useEffect } from 'react';
 import VideoIndexItem from './video_index_item'
+import UserIndexItem from '../users/user_index_item'
 
 function VideoIndex(props) {
-    const { videos, searching, section, userId, subs } = props;
+    const { videos, searching, section, userId, subs, users, flip } = props;
 
     useEffect(() => {
         if (!searching) props.fetchVideos()
+        if (section === "Your Subscriptions") props.fetchUsers(subs)
     }, [])
 
     if (videos) {
         let filteredVideos = videos;
         
-        if (section === "library") {
-            filteredVideos = videos.filter(video => video.user.id === userId )
-        }
-
         if (section === "subscriptions") {
             filteredVideos = videos.filter(video => subs.includes(video.user.id) )
         }
 
-        if (section === "Liked Videos") {
-            filteredVideos = videos.sort(video => subs.includes(video.user.id) )
+        if (section === "Your Subscriptions") {
+            if (Object.values(users).length > 1) {
+                return (
+                    <div className="user-index">
+                        {subs.map(userId => (
+                        <UserIndexItem
+                        key={userId}
+                        user={users[userId]}/>
+                    ))}
+                    </div>
+                )
+            }
         }
 
-        
+        if (section === "library") {
+            filteredVideos = videos.filter(video => video.user.id === userId )
+        }
+
+        if (section === "Liked Videos") {
+            filteredVideos = videos.filter(video => video.like ? true : false)
+        }        
 
         if (section === "explore") {
-            function shuffle(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    let j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
-                }
-            }
-            shuffle(filteredVideos)
+            filteredVideos = videos.sort(function(a, b){return b.viewsCount - a.viewsCount});
         }
 
         if (filteredVideos.length === 0) {
-            return <p className="feed">No videos to show.</p>
+            return <p className="scoot-text">No videos to show.</p>
         }
 
         return (
-            <div className="video-index">
+            <div className={`video-index ${flip ? "kill-margin" : ""}`}>
                 {filteredVideos.map(video => (
                     <VideoIndexItem
                     key={video.id}

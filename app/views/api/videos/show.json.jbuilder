@@ -12,6 +12,7 @@ like = @video.likes.select { |like| like.liker_id == @userId }
 json.like like[0]
 json.likesCount @video.likes.select { |like| like.kind == "like" }.length
 json.dislikesCount @video.likes.select { |like| like.kind == "dislike" }.length
+json.viewsCount @video.views.length
 
 if @video.comments
     json.comments @video.comments do |comment|

@@ -66,7 +66,7 @@ function LikeButtons(props) {
     }
 
     return <div id="likes-box">
-        <p>{`${0} views • ${props.video.published}`}</p>
+        <p>{`${video.viewsCount} views • ${props.video.published}`}</p>
         <div className="flex-row">
             <div className={kind ? "border-blue flex-row"
              : "border-grey flex-row"}>

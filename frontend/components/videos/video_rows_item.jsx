@@ -15,7 +15,7 @@ function VideoRowsItem(props) {
         </div>
         <div className="video-rows-details">
             <h3>{video.title}</h3>
-            <p>{`50 views • ${video.date}`}</p>
+            <p>{`${video.viewsCount} views • ${video.date}`}</p>
             <div className="channel-info">
                 {!video.user.profile_image_url ? 
                     <FontAwesomeIcon

@@ -20,7 +20,7 @@ export const skip = <div className="player-btn">
     </svg>
 </div>
 
-export const muted = <div className="player-btn">
+export const mutedIcon = <div className="player-btn">
     <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
         <defs><clipPath id="ytp-svg-volume-animation-mask">
             <path d="m 14.35,-0.14 -5.86,5.86 20.73,20.78 5.86,-5.91 z"></path>

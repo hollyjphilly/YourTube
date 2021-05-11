@@ -11,6 +11,10 @@ function CommentIndex(props) {
     } = props;
 
     if (comments) {
+
+        if (comments.length === 0) {
+            return <p className="scoot-text">This video has no comments.</p>
+        }
         
         return (
             <div className="comment-index">

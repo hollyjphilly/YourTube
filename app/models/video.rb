@@ -33,6 +33,10 @@ has_many :commenters,
 has_many :likes,
 	as: :likeable
 
+has_many :views,
+	foreign_key: :video_id,
+	class_name: :View
+
 # def ensure_moviefile
 # 	unless self.moviefile.content_type == "video/mp4"
 # 		errors[:video] << "must be an mp4 file."

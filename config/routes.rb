@@ -2,7 +2,8 @@
 #
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
 #                      root GET    /                                                                                        static_pages#root
-#                 api_users POST   /api/users(.:format)                                                                     api/users#create {:format=>:json}
+#                 api_users GET    /api/users(.:format)                                                                     api/users#index {:format=>:json}
+#                           POST   /api/users(.:format)                                                                     api/users#create {:format=>:json}
 #                  api_user PATCH  /api/users/:id(.:format)                                                                 api/users#update {:format=>:json}
 #                           PUT    /api/users/:id(.:format)                                                                 api/users#update {:format=>:json}
 #                           DELETE /api/users/:id(.:format)                                                                 api/users#destroy {:format=>:json}
@@ -35,7 +36,7 @@ Rails.application.routes.draw do
 		root to: 'static_pages#root'
 
 		namespace :api, defaults: {format: :json} do
-			resources :users, only: [:create, :destroy, :update]
+			resources :users, only: [:create, :destroy, :update, :index]
 			resources :videos, only: [:show, :index, :create, :destroy, :update]
 			resources :likes, only: [:create, :destroy, :update]
 			resources :comments, only: [:create, :destroy, :update]

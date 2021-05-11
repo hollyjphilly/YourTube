@@ -13,7 +13,7 @@ const mSTP = ({ entities, session }, rProps) => {
     const subscriptions  = ((entities.users && session.id) ? entities.users[session.id].subscriptions 
     : [])
     return {
-        videos: entities.videos,
+        videos: Object.keys(entities.videos),
         video: entities.videos[rProps.match.params.videoId],
         subs: subscriptions,
         userId: session.id,

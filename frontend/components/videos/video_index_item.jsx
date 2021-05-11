@@ -39,7 +39,7 @@ class VideoIndexItem extends React.Component {
                 <div className="vii-info">
                         <h3 onClick={this.watchVideo}>{video.title}</h3>
                         <p>{video.user.username}</p>
-                        <p>{`50 views • ${video.date}`}</p>
+                        <p>{`${video.viewsCount} views • ${video.date}`}</p>
                     </div>
                 </div>
             </div>

@@ -14,14 +14,10 @@ function VideoShow(props) {
     const [subCount, setSubCount] = useState(0)
     
     useEffect(() => {
-        if (Object.keys(videos).length <= 1) {
+        if (videos.length <= 1) {
             props.fetchVideos()
         }
-        props.fetchVideo(props.match.params.videoId, userId).then(
-           (res) => {
-               document.title = `${res.video.title} - YourTube`
-            }
-        )
+
         return () => {
             document.title = "YourTube";
         }
@@ -71,7 +67,7 @@ function VideoShow(props) {
         <div className="flex-row ninety-five">
         <div className="video-show">
             
-            <VideoPlayer URL={video.movieURL} id={video.id} />
+            <VideoPlayer URL={video.movieURL} id={video.id} max={videos.length}/>
 
             <div id="video-info">
                 <h1>{video.title}</h1>

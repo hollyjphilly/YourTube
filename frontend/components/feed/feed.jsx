@@ -14,7 +14,7 @@ function Feed(props) {
             break;
 
         case "subscriptions":
-            sectionHeader = "Latest";
+            sectionHeader = "Latest Videos";
             secondHeader = "Your Subscriptions";
             break;
 
@@ -31,7 +31,7 @@ function Feed(props) {
         <MastheadContainer />
         <LeftNav />
         <h2 className="feed">{sectionHeader}</h2>
-        <VideoIndexContainer section={section}/>
+        <VideoIndexContainer section={section} flip={secondHeader ? true : false}/>
         {secondHeader ? <><h2 className="feed">{secondHeader}</h2>
         <VideoIndexContainer section={secondHeader}/></> : ""}
     </div>

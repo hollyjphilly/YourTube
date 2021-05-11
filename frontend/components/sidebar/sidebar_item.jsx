@@ -15,7 +15,7 @@ function SidebarItem(props) {
         <div className="sidebar-details">
             <h3>{video.title}</h3>
             <p>{video.user.username}</p>
-            <p>{`50 views • ${video.date}`}</p>
+            <p>{`${video.viewsCount} views • ${video.date}`}</p>
         </div>
     </div>
 }
