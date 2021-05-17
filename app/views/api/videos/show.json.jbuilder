@@ -2,7 +2,8 @@ puts "-------------JSON JBUILDER----------------"
 json.extract! @video, :id, :title, :description, :uploader_id
 json.published @video.created_at.strftime("%b %d, %Y")
 json.movieURL url_for(@video.moviefile)
-json.thumbURL url_for(@video.thumbnail)
+thumbnail = @video.thumbnail.attached? ? url_for(@video.thumbnail) : nil
+json.thumbURL thumbnail
 json.user do
     json.extract! @video.user, :id, :username, :profile_image_url
     json.subscribers @video.user.subscribers.length

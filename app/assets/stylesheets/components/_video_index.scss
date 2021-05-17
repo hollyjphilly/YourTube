@@ -8,6 +8,7 @@
 
 .video-index-item {
     flex-grow: 1;
+    max-width: 520px;
     cursor: pointer;
 
     .vii-img {
@@ -69,4 +70,19 @@
 
 .kill-margin {
     margin-bottom: 40px;
+}
+
+#trash {
+    svg {
+        fill: $icon-gray;
+        margin: 20px;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+#trash-grow {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }

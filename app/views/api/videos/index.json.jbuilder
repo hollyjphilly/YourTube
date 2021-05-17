@@ -2,7 +2,8 @@
      json.set! video.id do   
         json.extract! video, :id, :title, :description
         json.movieURL url_for(video.moviefile)
-        json.thumbURL url_for(video.thumbnail)
+        thumbnail = video.thumbnail.attached? ? url_for(video.thumbnail) : nil
+        json.thumbURL thumbnail
         json.viewsCount video.views.length
         json.user do
                 json.extract! video.user, :id, :username, :profile_image_url

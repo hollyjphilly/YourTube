@@ -40,6 +40,17 @@ class Api::VideosController < ApplicationController
         end
     end
 
+    def destroy
+        @video = Video.find(params[:id])
+
+        if @video.destroy
+            render json: @video.id
+        else
+            render json: @video.errors.full_messages, status: :unprocessable_entity
+        end
+    
+    end
+
     def video_params
         params.require(:video).permit(  :title,
                                         :description,

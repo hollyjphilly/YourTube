@@ -48,6 +48,19 @@ class Modal extends React.Component {
         }
     }
 
+    handleTrash(e) {
+        e.preventDefault();
+        this.setState({
+            hidden: true,
+            uploadingImage: false,
+            next: false,
+            movieURL: null,
+            moviefile: null,
+            title: "",
+            description: "",
+        })
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -55,7 +68,10 @@ class Modal extends React.Component {
         formData.append('video[description]', this.state.description)
         formData.append('video[uploader_id]', this.props.currentUser.id)
         formData.append('video[moviefile]', this.state.moviefile)
-        this.props.postVideo(formData);
+        
+        this.props.postVideo(formData).then(
+            this.props.history.push('/feed/library')
+        )
     }
 
     updateTitle(e) {
@@ -98,7 +114,6 @@ class Modal extends React.Component {
     firstScreen(e) {
         return <>
             <div className="uploads-filepicker">
-
                 <input type="file"
                     name="file"
                     id="file"
@@ -119,7 +134,7 @@ class Modal extends React.Component {
                 <div className="uploads-dialog">
 
                     <h4>Drag and drop video files to upload</h4>
-                    <p>Your videos will be private until you publish them.</p>
+                    <p>Your videos will be public when you publish them.</p>
 
                     <input type="file"
                         name="file"
@@ -132,6 +147,8 @@ class Modal extends React.Component {
                 </div>
             </div>
             <div className="uploads-footer">
+                <p>Need a video file to test the upload feature?<br></br><a href="https://drive.google.com/uc?export=download&id=1GFaw0fC9i5rXXl0EPl4SuOyfJD0z0qvA" download>
+                Click here to download one.</a></p><br></br><br></br>
                 <p>By submitting your videos to YourTube, you acknowledge that you agree to <span id="blue">YourTube's Terms of Service</span> and <span id="blue">Community Guidelines</span>.</p>
                 <p>Please be sure not to violate others' copyright or privacy rights. <span id="blue">Learn more</span></p>
             </div>
@@ -143,7 +160,8 @@ class Modal extends React.Component {
             className="vii-img"
             src={this.state.movieURL}
             muted={true}
-            loop={true} /></div> : ""
+            loop={true} /></div> : <img src={window.defaultThumbnail} 
+            alt="thumbnail"></img>
         const { errors } = this.props;
 
         return <>
@@ -193,10 +211,10 @@ class Modal extends React.Component {
             )) : ""}
 
             <div className="upload-footer">
-                <svg viewBox="0 0 24 24"
+                <div id="trash" onClick={this.handleTrash.bind(this)}><svg viewBox="0 0 24 24"
                 preserveAspectRatio="xMidYMid meet"
                 focusable="false">
-                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+                <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg></div>
                 <button type="submit" className="select-files">PUBLISH</button>
             </div>
             

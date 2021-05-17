@@ -11,7 +11,8 @@ function VideoRowsItem(props) {
 
     return <div className="video-rows-item" onClick={visit}>
         <div className="video-rows-thumbnail">
-            <img src={video.thumbURL} alt={`${video.title} thumbnail`}></img>
+            <img src={video.thumbURL ? video.thumbURL : window.defaultThumbnail} 
+            alt={`${video.title} thumbnail`}></img>
         </div>
         <div className="video-rows-details">
             <h3>{video.title}</h3>

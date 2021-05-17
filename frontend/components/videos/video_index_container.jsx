@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import VideoIndex from './video_index';
-import { fetchVideos } from '../../actions/video_actions';
+import { fetchVideos, deleteVideo } from '../../actions/video_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import { withRouter } from 'react-router-dom';
 
@@ -18,8 +18,8 @@ const mSTP = ({ entities, session }, rProps) => {
 const mDTP = (dispatch) => {
     return {
         fetchVideos: () => dispatch(fetchVideos()),
-        fetchUsers: (subs) => dispatch(fetchUsers(subs))
-
+        fetchUsers: (subs) => dispatch(fetchUsers(subs)),
+        deleteVideo: (videoId) => dispatch(deleteVideo(videoId))
     }
 }
 

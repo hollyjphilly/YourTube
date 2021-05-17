@@ -3,7 +3,8 @@ import VideoIndexItem from './video_index_item'
 import UserIndexItem from '../users/user_index_item'
 
 function VideoIndex(props) {
-    const { videos, searching, section, userId, subs, users, flip } = props;
+    const { videos, searching, section, userId, 
+            subs, users, flip, deleteVideo } = props;
 
     useEffect(() => {
         if (!searching) props.fetchVideos()
@@ -52,7 +53,9 @@ function VideoIndex(props) {
                 {filteredVideos.map(video => (
                     <VideoIndexItem
                     key={video.id}
-                    video={video}/>
+                    video={video}
+                    deleteVideo={deleteVideo}
+                    currentUserId={userId}/>
                 ))}
             </div>
         );  

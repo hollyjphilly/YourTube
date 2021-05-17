@@ -10,7 +10,8 @@ function SidebarItem(props) {
 
     return <div className="sidebar-item" onClick={visit}>
         <div className="sidebar-thumbnail">
-            <img src={video.thumbURL} alt={`${video.title} thumbnail`}></img>
+            <img src={video.thumbURL ? video.thumbURL : window.defaultThumbnail} 
+            alt={`${video.title} thumbnail`}></img>
         </div>
         <div className="sidebar-details">
             <h3>{video.title}</h3>

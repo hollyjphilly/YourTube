@@ -88,18 +88,25 @@ function LikeButtons(props) {
                 </svg>
                 <div>{dislikes}</div>
             </button></div>
-            <button title="Share" className="grey">
+            <a href="https://www.linkedin.com/in/hollyjphillips/"
+                target="_blank"
+                style={{"textDecoration": "none"}}>
+                <button title="Share"
+                    className="grey">
                 <svg viewBox="0 0 24 24" className="grey">
                     <path d="M14 9V3L22 12L14 21V15C8.44 15 4.78 17.03 2 21C3.11 15.33 6.22 10.13 14 9Z"></path>
                 </svg>
                 <div>{`SHARE`}</div>
-            </button>
-            <button title="Save" className="grey">
+            </button></a>
+            <a href="https://www.linkedin.com/in/hollyjphillips/"
+                target="_blank"
+                style={{"textDecoration": "none"}}>
+                <button title="Save" className="grey">
                 <svg viewBox="0 0 24 24" className="grey">
                     <path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"></path>
                 </svg>
                 <div>{`SAVE`}</div>
-            </button>
+            </button></a>
         </div>
     </div>
 
