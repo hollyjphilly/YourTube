@@ -47,7 +47,7 @@ function VideoIndex(props) {
         if (filteredVideos.length === 0) {
             return <p className="scoot-text">No videos to show.</p>
         }
-
+        
         return (
             <div className={`video-index ${flip ? "kill-margin" : ""}`}>
                 {filteredVideos.map(video => (
@@ -55,7 +55,8 @@ function VideoIndex(props) {
                     key={video.id}
                     video={video}
                     deleteVideo={deleteVideo}
-                    currentUserId={userId}/>
+                    currentUserId={userId}
+                    showTrash={section === "library"}/>
                 ))}
             </div>
         );  
