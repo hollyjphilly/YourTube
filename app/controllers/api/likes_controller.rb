@@ -17,9 +17,7 @@ class Api::LikesController < ApplicationController
     end
 
     def update
-        
-        @like = Like.find_by(liker_id: like_params[:liker_id],
-            likeable_id: like_params[:likeable_id])
+        @like = Like.find_by(id: params[:id])
 
         if @like.update(like_params)
             render :show
@@ -29,9 +27,7 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
-        
-        @like = Like.find_by(liker_id: like_params[:liker_id],
-            likeable_id: like_params[:likeable_id])
+        @like = Like.find_by(id: params[:id])
 
         if @like.destroy
             
@@ -46,7 +42,8 @@ class Api::LikesController < ApplicationController
         params.require(:like).permit(  :liker_id,
                                         :likeable_type,
                                         :likeable_id,
-                                        :kind
+                                        :kind,
+                                        :id
                                     )
     end
 

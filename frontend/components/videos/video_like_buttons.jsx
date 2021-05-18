@@ -13,18 +13,23 @@ function LikeButtons(props) {
     }, [video])
 
     const handleLike = (btnKind) => {
-        if (userId) {
-            const id = video.like ? { id: video.like.id } : {}
-            const oppositeBtnKind = (btnKind == "like") ? "dislike" : "like"
-            const like = Object.assign(id, { liker_id: userId, 
+        if (userId) {      // If the users is signed in...
+            
+            const like = {   // construct a like object for future use.
+                id: (video.like ? video.like.id : null),
+                liker_id: userId, 
                 likeable_type: "Video", 
                 likeable_id: video.id, 
                 kind: btnKind
-            })
-            if (kind) {
+            }
+
+            if (kind) {       // If they have a like in the database,
+
+                const oppositeBtnKind = (btnKind == "like") ? "dislike" : "like"
+
                 switch (kind) {
-                    case btnKind:
-                        props.deleteLike(like)
+                    case btnKind: // and clicked same btn as the kind in db 
+                        props.deleteLike(like) //  DELETE their like
                         if (btnKind == "like") {
                             setLikes(likes - 1)
                             setKind(null)
@@ -34,8 +39,8 @@ function LikeButtons(props) {
                         }
                         break;
         
-                    case oppositeBtnKind:
-                        props.updateLike(like)
+                    case oppositeBtnKind: // and clicked opposite btn as in db
+                        props.updateLike(like) // SWITCH their like kind
                         if (oppositeBtnKind == "like") {
                             setLikes(likes - 1)
                             setDislikes(dislikes + 1)
@@ -50,8 +55,8 @@ function LikeButtons(props) {
                     default:
                         break;
                 }
-            } else {
-                props.createLike(like)
+            } else {    // else CREATE a new like since there is none in db
+                props.createLike(like) 
                 if (btnKind == "like") {
                     setLikes(likes + 1)
                     setKind("like")
@@ -60,7 +65,7 @@ function LikeButtons(props) {
                     setKind("dislike")
                 }
             }
-        } else {
+        } else {    // else prompt to login since they're not logged in
             props.history.push('/login')
         }
     }
