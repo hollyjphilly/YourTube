@@ -12,17 +12,17 @@ function LikeButtons(props) {
         setKind(video.like ? video.like.kind : null)
     }, [video])
 
-    const handleLike = (currentLike, btnKind, model) => {
+    const handleLike = (btnKind) => {
         if (userId) {
-            const antiBtnKind = (btnKind == "like") ? "dislike" : "like"
-            const id = currentLike ? { id: currentLike.id } : {}
+            const id = video.like ? { id: video.like.id } : {}
+            const oppositeBtnKind = (btnKind == "like") ? "dislike" : "like"
             const like = Object.assign(id, { liker_id: userId, 
-                likeable_type: model, 
+                likeable_type: "Video", 
                 likeable_id: video.id, 
                 kind: btnKind
             })
-            if (currentLike) {
-                switch (currentLike.kind) {
+            if (kind) {
+                switch (kind) {
                     case btnKind:
                         props.deleteLike(like)
                         if (btnKind == "like") {
@@ -34,9 +34,9 @@ function LikeButtons(props) {
                         }
                         break;
         
-                    case antiBtnKind:
+                    case oppositeBtnKind:
                         props.updateLike(like)
-                        if (antiBtnKind == "like") {
+                        if (oppositeBtnKind == "like") {
                             setLikes(likes - 1)
                             setDislikes(dislikes + 1)
                             setKind("dislike")
@@ -71,7 +71,7 @@ function LikeButtons(props) {
             <div className={kind ? "border-blue flex-row"
              : "border-grey flex-row"}>
             <button  title="I like this" 
-                    onClick={() => handleLike(video.like, "like", "Video")}
+                    onClick={() => handleLike("like")}
                     className={kind === "like" ?
                         "blue" : "grey"}>
                 <svg viewBox="0 0 24 24">
@@ -80,7 +80,7 @@ function LikeButtons(props) {
                 <div>{likes}</div>
             </button>
             <button title="I dislike this" 
-                    onClick={() => handleLike(video.like, "dislike", "Video")}
+                    onClick={() => handleLike("dislike")}
                     className={kind === "dislike" ?
                         "blue" : "grey"}>
                 <svg viewBox="0 0 24 24">
