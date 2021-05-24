@@ -42,14 +42,8 @@ I learned and was able to implement:</p>
 # Project Status: in development
 ### Upcoming Features
 <ul>
-  <li>Return to index or video show page after publishing a video</li>
-  <li>Add my videos section to Library page</li>
-  <li>Delete video functionality on modal, my videos page, video show page</li>
   <li>Video Player: add time scrubber using "range"</li>
   <li>Add upload thumbnail functionality</li>
-  <li>Create proper seeds</li>
-  <li>Add subscribe functionality</li>
-  <li>Filter the left nav sections/components accordingly</li>
   <li>Create channels/User Show page</li>
   <li>Add ability to edit account info</li>
   <li>Add Sign In with Google Auth</li>
