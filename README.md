@@ -7,12 +7,6 @@ YourTube is a YouTube clone where users can watch, share, upload, like, and comm
 <br /><br />
 
 
-# Live Demo
-[Checkout the YourTube live demo here!](https://yourtube-hollyphillips.herokuapp.com/#/)<br />
-Create an account or sign in as a demo user to enjoy the full YourTube video platform experience.
-<br /><br />
-
-
 # Technologies
 **Hosting:**  Heroku & AWS <br />
 **Backend:**  PostgreSQL & Ruby on Rails API <br />
